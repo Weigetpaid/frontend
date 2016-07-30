@@ -84,7 +84,7 @@ h1{
 }
 
 .sidebar ul {
-  margin-top: 70px;
+  margin-top: 60px;
   margin-bottom: 0;
   margin-left: 0;
   width: 100%;
@@ -118,7 +118,7 @@ h1{
 }
 
 .sidebar li a:hover {
-  background:teal;
+  color:lightgreen;
 }
 
 .mainMap {
@@ -216,10 +216,10 @@ footer {
   padding-top:5%;
 }
 
-
-.black{
+.blackBurger{
   color:black;
 }
-.clicked {
+
+.whiteBurger{
   color:white;
 }
