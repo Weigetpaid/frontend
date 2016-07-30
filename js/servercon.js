@@ -1,4 +1,4 @@
-function newRequest(name, phonenumber, lat, lng, name, category, desc, numpeople, timeestimate, completed) {
+function newRequest(name, phonenumber, lat, lng, category, desc, numpeople, timeestimate, completed) {
 	console.log("Fuck");
 	
 	$.ajax({
@@ -51,3 +51,5 @@ function getRequestsForUser(phonenumber) {
 	    timeout: 120000,
 	});
 }
+
+newRequest("Hello", 0402437937, 128, 120, "1", "Do some shit", 3, 2, 0);
