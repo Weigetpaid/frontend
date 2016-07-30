@@ -5,9 +5,21 @@
     <title>Heatmaps</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/1af0c15e61.js"></script>
   </head>
 
   <body>
+    <nav class="sidebar">
+      <ul>
+        <li><a>Help Me</a></li>
+        <li><a>Change Details</a></li>
+        <li class="active"><a>Map</a></li>
+        <li><a>Online Resources</a></li>
+    </nav>
+    <span class="glyphicon glyphicon-menu-hamburger burger" aria-hidden="true"></span>
+
     <div id="floating-panel">
       <button onclick="toggleHeatmap()">Toggle Heatmap</button>
       <button onclick="changeGradient()">Change gradient</button>
@@ -15,6 +27,46 @@
       <button onclick="changeOpacity()">Change opacity</button>
     </div>
     <div id="map"></div>
+
+    <footer class="footer">
+      <div class="container pull-left">
+        <button type="button" class="btn btn-primary btn-md">
+          <i class="fa fa-paper-plane"></i>
+        </button>
+      </div>
+      <div class="container pull-right">
+        <button type="button" class="btn btn-primary btn-md right" data-toggle="modal" data-target="#filterModal">
+          <i class="fa fa-filter"></i>
+        </button>
+      </div>
+    </footer>
+    <!-- Filters Modal -->
+    <div class="modal fade" id="filterModal" tabindex="-1" role="dialog" aria-labelledby="filterModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="filterModalLabel">Filters</h4>
+          </div>
+          <div class="modal-body">
+            <div class="checkbox">
+              <label><input type="checkbox" value="">Filter 1</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="">Filter 1</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="">Filter 1</label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Apply</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/nav.js"></script>
     <script>
 
       // This example requires the Visualization library. Include the libraries=visualization

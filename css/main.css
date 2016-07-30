@@ -4,8 +4,13 @@ html, body {
   padding: 0;
   text-align: center;
 }
+
+h1{
+  font-family: 'Open Sans', sans-serif;
+}
+
 #map {
-  height: 100%;
+  height: 95%;
 }
 #floating-panel {
   position: absolute;
@@ -31,11 +36,11 @@ html, body {
 }
 /* mapTemplate.html */
 .burger {
-  position:fixed;
+  position:fixed !important;
   z-index:2;
   font-size: 2.5em;
   left: 20px;
-  top: 20px;
+  top: 20px !important;
 }
 
 .sidebar {
@@ -73,10 +78,26 @@ html, body {
 .sidebar li.active {
   background:teal;
 }
+
+.sidebar li a,
+.sidebar li a:visted,
+.sidebar li a:link  {
+  color:white;
+  text-decoration: none;
+}
 .mainMap {
   background:green;
 }
 
 .on {
   width:70%;
+}
+
+footer {
+  height:45px;
+  background-color: #333;
+}
+footer > div {
+  margin: 5px;
+
 }
