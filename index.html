@@ -46,6 +46,12 @@
     <pre id="logger" style="visibility: hidden;">Log:</pre>
 
     <script>
+    let long = sessionStorage.getItem('lastLong');
+    let lat = sessionStorage.getItem('lastLat');
+
+    if (lat != null && long != null) {
+      window.location.replace("./heatmap.html");
+    }
       $(function(){
 
         $("#geocomplete").geocomplete()
@@ -71,7 +77,7 @@
 
       });
 
-      
+
     </script>
 
 
