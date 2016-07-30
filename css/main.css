@@ -199,3 +199,9 @@ footer {
     -o-transition: background-color 0.2s linear;
     transition: background-color 0.2s linear;
 }
+
+
+.indexSpacing{
+  margin-bottom: 0px;
+  padding-top:5%;
+}
