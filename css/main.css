@@ -84,11 +84,11 @@ body {
 }
 
 #bg {
-  position: fixed; 
-  top: 0; 
-  left: 0; 
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: -1;
-  
+
   /* Preserve aspet ratio */
   min-width: 100%;
   min-height: 100%;
@@ -314,4 +314,20 @@ footer {
 
 .whiteBurger{
   color:white;
+}
+
+.glyphicon {
+    font-size: 50px;
+    padding-top: 22px;
+}
+
+.col-md-3 {
+    width: 20%;
+}
+
+.vertical-line{
+  width: 2px;
+  background-color: white;
+  height: 100%;
+  float: left;
 }
