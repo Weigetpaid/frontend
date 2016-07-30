@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Crikey!</title>
+      <link rel="icon" href="Carl.ico" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -13,6 +14,7 @@
 <body>
   <div class="container" id="helpForm">
     <form>
+      <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
       <!--Step one of multi step form -->
       <div class="form-step-one">
         <br><br>
@@ -31,39 +33,60 @@
 
       <!--Step two -->
       <div class="form-step-two" style="display:none">
+
         <h3>What do you need help with?</h3>
+
         <button type="submit" class="btn btn-default secondStep">
-          <h5>Accommodation<h5>
-            <h6>test</h6>
+          <h4>Accommodation<h4>
+          <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper. </h6>
         </button>
         <br>
 
-        <button type="submit" class="btn btn-default secondStep">Transportation</button>
+        <button type="submit" class="btn btn-default secondStep">
+          <h4>Transportation<h4>
+          <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper. </h6>
+        </button>
         <br>
-        <button type="submit" class="btn btn-default secondStep">Services</button>
+
+        <button type="submit" class="btn btn-default secondStep">
+          <h4>Services<h4>
+          <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper. </h6>
+        </button>
         <br>
-        <button type="submit" class="btn btn-default secondStep">Other</button>
+
+        <button type="submit" class="btn btn-default secondStep">
+          <h4>Other<h4>
+          <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper. </h6>
+        </button>
         <br>
       </div>
 
       <!--Step three -->
       <div class="form-step-three" style="display:none">
         <h3>*Selected Button*</h3>
-        <p>Add Description...</p>
-        <textarea class="form-control" rows="3" placeholder="I need help transporting sandbags from town hall to my house"></textarea>
+        <p>Please give some more details about your requirements.</p>
+        <textarea class="form-control" rows="3" placeholder="E.g. I need help transporting sandbags from town hall to my house"></textarea>
         <br>
-        <p>How many people?</p>
+        <p>How many people will you need?</p>
         <select class="form-control">
           <option>1</option>
           <option>2</option>
           <option>3</option>
-          <option>4</option>
-          <option>5+</option>
+          <option>4+</option>
+        </select>
+        <br>
+
+        <p>Estimated time needed?</p>
+        <select class="form-control">
+          <option>&lt;10 minutes</option>
+          <option>10-30 minutes</option>
+          <option>30-60 minutes</option>
+          <option>60+ minutes</option>
         </select>
         <br>
         <button type="submit" class="btn btn-default thirdStep">Submit</button>
       </div>
-
+</div>
     </form>
   </div>
   <script>

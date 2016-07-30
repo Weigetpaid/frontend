@@ -34,6 +34,24 @@ h1{
   top: 10px;
   z-index: 5;
 }
+
+/*index*/
+.titleImg {
+  width:250px
+}
+
+.indexInfo h1 {
+  font-size: 1.5em;
+}
+
+.indexInfo h2 {
+  font-size: 1.2em;
+}
+
+.indexInfo .form-signin {
+  border: 0;
+}
+
 /* mapTemplate.html */
 .burger {
   position:fixed !important;
@@ -147,4 +165,11 @@ footer {
 	  border-top-left-radius: 0;
 	  border-top-right-radius: 0;
 	}
+}
+
+.secondStep {
+  white-space:normal !important;
+  word-wrap:break-word;
+  margin-top:20px;
+  margin-bottom:20px;
 }
