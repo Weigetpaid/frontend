@@ -1,15 +1,35 @@
 function newRequest(name, phonenumber, lat, lng) {
-  console.log("Fuck");
-  var myJSONData = "{'phone': '0402437937', 'name': 'Fuck McFuck','lat': '127','lng': '128'}";
-    $.ajax({
-      type: 'POST',
-      url: 'http://localhost:4000',
-      data: myJSONData,
-      dataType: 'application/json',
-      success: function(data) {
-        console.log("Success");
-      }
-  });   // Ajax Call
+	console.log("Fuck");
+	
+	$.ajax({
+	  url: "http://api.weigetpaid.timhadwen.com/request",
+	  type:"POST",
+	  data: JSON.stringify({phone: "0402437937", name: "Fuck McFuck", lat: "127", lng: "128"}),
+	  contentType: "application/json",
+	  dataType: "json",
+	  success: function(){
+	    console.log("Sent to server");
+	  }
+	});
 }
 
-newRequest("Dick Butts", 04024377777, 100, 100);
+function getRequests() {
+	$.ajax({
+	    url: "http://api.weigetpaid.timhadwen.com/request",
+	    type: "GET",
+	    contentType: 'application/json; charset=utf-8',
+	    success: function(resultData) {
+	        //here is your json.
+	          // process it
+	          console.log(resultData);
+	          return resultData;
+	    },
+	    error : function(jqXHR, textStatus, errorThrown) {
+	    },
+	
+	    timeout: 120000,
+	});
+}
+
+newRequest("Dick Butts", 0402437777, 100, 100);
+/* getRequests(); */
