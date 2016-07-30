@@ -3,7 +3,7 @@ function newRequest(name, phonenumber, lat, lng) {
   var myJSONData = "{'phone': '0402437937', 'name': 'Fuck McFuck','lat': '127','lng': '128'}";
     $.ajax({
       type: 'POST',
-      url: 'localhost:4000',
+      url: 'http://localhost:4000',
       data: myJSONData,
       dataType: 'application/json',
       success: function(data) {
