@@ -115,7 +115,24 @@
           data:pointArray,
           map: map
         });
-		drawBlips();
+        $.ajax({
+      	    url: "http://api.weigetpaid.timhadwen.com/request",
+      	    type: "GET",
+      	    contentType: 'application/json; charset=utf-8',
+      	    success: function(resultData) {
+      	        //here is your json.
+      	          // process it
+      	          console.log(resultData);
+                  resultData;
+                  //drawBlips();
+
+      	    },
+      	    error : function(jqXHR, textStatus, errorThrown) {
+      	    },
+
+      	    timeout: 120000,
+      	});
+
       }
 
       function toggleHeatmap() {
@@ -183,8 +200,8 @@
         $("#MarkerTitle").text(this.type);
         $("#MarkerState").text(this.state);
         $("#MarkerDescription").text(this.description);
-        $("#MarkerParticipants").text(this.NumParticipants);
-        $("#MarkerTime").text(this.Time);
+        $("#MarkerParticipants").text(this.numParticipants);
+        $("#MarkerTime").text(this.time);
         });
 	    }
 	  }
