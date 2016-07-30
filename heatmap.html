@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/1af0c15e61.js"></script>
+    <script src="js/servercon.js"></script>
   </head>
 
   <body>
@@ -115,27 +116,14 @@
           data:pointArray,
           map: map
         });
+
         google.maps.event.addDomListener(document.getElementById('getLastLocal'), 'click', function () {
           map.setCenter(new google.maps.LatLng(parseFloat(sessionStorage.getItem('lastLat')),parseFloat(sessionStorage.getItem('lastLong'))));
       });
 
-        $.ajax({
-      	    url: "http://timhadwen.com:4000/request",
-      	    type: "GET",
-      	    contentType: 'application/json; charset=utf-8',
-      	    success: function(resultData) {
-      	        //here is your json.
-      	          // process it
-      	          console.log(resultData);
-                  resultData;
-                  //drawBlips();
+        getRequests();
+          //drawBlips();
 
-      	    },
-      	    error : function(jqXHR, textStatus, errorThrown) {
-      	    },
-
-      	    timeout: 120000,
-      	});
 
       }
 
