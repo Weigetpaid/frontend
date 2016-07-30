@@ -4,7 +4,7 @@ function newRequest(name, phonenumber, lat, lng) {
 	$.ajax({
 	  url: "http://api.weigetpaid.timhadwen.com/request",
 	  type:"POST",
-	  data: JSON.stringify({phone: "0402437937", name: "Fuck McFuck", lat: "127", lng: "128"}),
+	  data: JSON.stringify({phone: phonenumber, name: name, lat: lat, lng: lng}),
 	  contentType: "application/json",
 	  dataType: "json",
 	  success: function(){
@@ -30,6 +30,3 @@ function getRequests() {
 	    timeout: 120000,
 	});
 }
-
-newRequest("Dick Butts", 0402437777, 100, 100);
-/* getRequests(); */
