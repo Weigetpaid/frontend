@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>Crikey!</title>
+    <meta name="viewport" content="width=device-width">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -15,30 +16,24 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="text-center">
-                <img src="Carl.png" width="400" height="300">
-                <h1>Crikey!</h1>
-                <h2>Helping your community</h2>
-              <br>
-                <button type="button" class="btn btn-primary btn-lg">
-                    <i class="fa fa-map-marker"></i> Use Location
-                </button>
-                <h2> Or </h2>
-                    <div class="wrapper">
-                        <form class="form-signin">
-                            <h2 class="form-signin-heading">Please Enter Location</h2>
-                            <input type="text" class="form-control" name="street" placeholder="Address" required="" autofocus="" />
-                            <br>
-                            <button class="btn btn-lg btn-primary btn-block" type="submit"> Save</button>
-                            </button>
-                        </form>
-                </div>
-            </div>
+  <img class ="titleImg"src="Carl.png">
 
-        </div>
-    </div>
+<div class="indexInfo">
+  <h1>Crikey!</h1>
+  <h2>Helping your community</h2>
+  <button type="button" class="btn btn-primary btn-lg">
+      <i class="fa fa-map-marker"></i> Use Location
+  </button>
+  <h2> Or </h2>
+  <form class="form-signin">
+      <h2 class="form-signin-heading">Please Enter Location</h2>
+      <input type="text" class="form-control" name="street" placeholder="Address" required="" autofocus="" />
+      <br>
+      <button class="btn btn-lg btn-primary btn-block" type="submit"> Save</button>
+      </button>
+  </form>
+</div>
+
 
 </body>
 <html>
