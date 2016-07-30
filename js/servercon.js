@@ -51,5 +51,3 @@ function getRequestsForUser(phonenumber) {
 	    timeout: 120000,
 	});
 }
-
-newRequest("Hello", 0402437937, 128, 120, "1", "Do some shit", 3, 2, 0);
