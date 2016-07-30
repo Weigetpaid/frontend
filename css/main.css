@@ -2,6 +2,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 #map {
   height: 100%;
@@ -27,4 +28,55 @@ html, body {
   position: absolute;
   top: 10px;
   z-index: 5;
+}
+/* mapTemplate.html */
+.burger {
+  position:fixed;
+  z-index:2;
+  font-size: 2.5em;
+  left: 20px;
+  top: 20px;
+}
+
+.sidebar {
+  background: gray;
+  overflow:hidden;
+  width:0;
+  transition: 0.2s;
+  height:100%;
+  position:fixed;
+  z-index: 2;
+  border-right: 1px solid black;
+}
+
+.sidebar ul {
+  margin-top: 60px;
+  margin-bottom: 0;
+  margin-left: 0;
+  width: 100%;
+  float: left;
+  padding-left: 0;
+  height: 100%;
+}
+
+.sidebar li {
+  list-style-type:none;
+  padding:20px;
+  border-top: 1px solid black;
+  white-space: nowrap;
+}
+
+.sidebar li:last-child {
+  border-bottom: 1px solid black;
+}
+
+.sidebar li.active {
+  background:teal;
+}
+.mainMap {
+  background:green;
+}
+
+.on {
+  width:70%;
 }
