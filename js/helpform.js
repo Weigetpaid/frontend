@@ -23,21 +23,8 @@ function submitHelpRequest(){
   var peopleValue = people.value;
   var time = document.getElementById('timeInput').value;
   var timeValue = time.value;
-
-  //Just check if lat/long has been set, it won't be while we are testing it
-  //without first going to the home page
-  var lat;
-  var lng;
-  if (sessionStorage.getItem("lastLat") !== null
-      || sessionStorage.getItem("lastLong") !== null){
-    lat = sessionStorage.getItem("lastLat");
-    lng = sessionStorage.getItem("lastLong");
-  }
-  else {
-    //So just set it as brisbane
-    lat = 27.4698;
-    lng = 153.0251;
-  }
+  var lat = sessionStorage.getItem("lastLat");
+  var lng = sessionStorage.getItem("lastLong");
 
   console.log(name, phone, lat, lng, category, desc, people, time)
   newRequest(name, phone, lat, lng, category, desc, people, time);
