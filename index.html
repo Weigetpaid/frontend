@@ -25,15 +25,47 @@
   <button type="button" class="btn btn-primary btn-lg buttonPrimary">
       <i class="fa fa-map-marker"></i> Use Location
   </button>
-  <h2> Or </h2>
-  <form class="form-signin">
-      <h2 class="form-signin-heading">Please Enter Location</h2>
-      <input type="text" class="form-control" name="street" placeholder="Address" required="" autofocus="" />
+  <h2> or </h2>
+
+<form class="form-signin">
+      <input class="form-control" id="geocomplete" type="text" placeholder="Type in an address" size="90" />
       <br>
-      <button class="btn btn-lg btn-primary btn-block buttonPrimary" type="submit"> Save</button>
-      </button>
-  </form>
+      <input class="btn btn-lg btn-primary btn-inline buttonPrimary" id="find" type="submit" value="Save" />
+    </form>
 </div>
+    
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+    <script src="js/jquery.geocomplete.min.js"></script>
+    <script src="js/logger.js"></script>
+    
+    <script>
+      $(function(){
+        
+        $("#geocomplete").geocomplete()
+          .bind("geocode:result", function(event, result){
+            $.log("Result: " + result.formatted_address);
+          })
+          .bind("geocode:error", function(event, status){
+            $.log("ERROR: " + status);
+          })
+          .bind("geocode:multiple", function(event, results){
+            $.log("Multiple: " + results.length + " results found");
+          });
+        
+        $("#find").click(function(){
+          $("#geocomplete").trigger("geocode");
+        });
+        
+        
+        $("#examples a").click(function(){
+          $("#geocomplete").val($(this).text()).trigger("geocode");
+          return false;
+        });
+        
+      });
+    </script>
 
 
 </body>
