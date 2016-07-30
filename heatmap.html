@@ -12,7 +12,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/1af0c15e61.js"></script>
     <script src="js/servercon.js"></script>
-    
+
     <script type="text/javascript" src="js/seslocations.js"></script>
   </head>
 
@@ -54,10 +54,10 @@
           </div>
           <div class="modal-body">
             <div class="checkbox">
-              <label><input type="checkbox" value="">Filter 1</label>
+              <label><input type="checkbox" onchange="toggleFlood" value="" id="togFlood">Previously flooded Areas</label>
             </div>
             <div class="checkbox">
-              <label><input type="checkbox" value="">Filter 1</label>
+              <label><input type="checkbox" value="" id="togHeat">Heat Marker</label>
             </div>
             <div class="checkbox">
               <label><input type="checkbox" value="">Filter 1</label>
@@ -100,7 +100,7 @@
       // parameter when you first load the API. For example:
       // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=visualization">
 
-      var map, heatmap;
+      var map, heatmap, floodData;
 
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
@@ -109,25 +109,8 @@
           mapTypeId: 'roadmap',
           mapTypeControl: false
         });
-        var array =[
-          new google.maps.LatLng(-27.4698, 153.0251)
-
-        ];
-        var pointArray = new google.maps.MVCArray(array);
-        heatmap = new google.maps.visualization.HeatmapLayer({
-          data:pointArray,
-          map: map
-        });
-
-
-        google.maps.event.addDomListener(document.getElementById('getLastLocal'), 'click', function () {
-          map.setCenter(new google.maps.LatLng(parseFloat(sessionStorage.getItem('lastLat')),parseFloat(sessionStorage.getItem('lastLong'))));
-      });
-
-        getRequests();
-
-        var layer = new google.maps.FusionTablesLayer({
-          map: map,
+        floodData = new google.maps.FusionTablesLayer({
+          //map: map,
           heatmap: { enabled: false },
           query: {
             select: "col2",
@@ -139,6 +122,28 @@
             templateId: 3
           }
         });
+        var array =[
+          new google.maps.LatLng(-27.4698, 153.0251)
+
+        ];
+        var pointArray = new google.maps.MVCArray(array);
+
+        heatmap = new google.maps.visualization.HeatmapLayer({
+          data:pointArray
+          //map: map
+        });
+
+
+        google.maps.event.addDomListener(document.getElementById('getLastLocal'), 'click', function () {
+          map.setCenter(new google.maps.LatLng(parseFloat(sessionStorage.getItem('lastLat')),parseFloat(sessionStorage.getItem('lastLong'))));
+      });
+
+        google.maps.event.addDomListener(document.getElementById('togFlood'), 'change', function () {
+          toggleFlood();
+      });
+      google.maps.event.addDomListener(document.getElementById('togHeat'), 'change', function () {
+        toggleHeatmap();
+    });
       //  getRequests();
 
           //drawBlips();
@@ -146,6 +151,9 @@
 
       }
 
+      function toggleFlood() {
+        floodData.setMap(floodData.getMap() ? null: map);
+      }
       function toggleHeatmap() {
         heatmap.setMap(heatmap.getMap() ? null : map);
       }
@@ -191,19 +199,18 @@
 
 		var icons = {pepe: {icon: 'pepe.png'}, datboi: {icon: 'boi.png'}};
 
-		var features = getBlips();
-
-		for (var i = 0, feature; feature = features[i];i++){
-			var marker = new google.maps.Marker({
-			position: feature.position,
-			icon: icons[feature.type].icon,
-  			map: map,
+	getResults(function(feature){
+    for (var i = 0, feature; feature = features[i];i++){
+      var marker = new google.maps.Marker({
+      position: feature.position,
+      icon: icons[feature.type].icon,
+        map: map,
         type: feature.type,
         state:"in progress",
         description: "Forever alone",
         numParticipants: "3",
         time: "30mins"
-	    });
+      });
 
       google.maps.event.addListener(marker, 'click', function() {
         console.log(this.type);
@@ -214,7 +221,11 @@
         $("#MarkerParticipants").text(this.numParticipants);
         $("#MarkerTime").text(this.time);
         });
-	    }
+      }
+
+    });
+
+
 	  }
     </script>
     <script async defer
