@@ -6,7 +6,7 @@
     <title>Heatmaps</title>
       <link rel="icon" href="Carl.ico" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    
+
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -16,7 +16,6 @@
   <body>
     <nav class="sidebar">
       <ul>
-        <li><a href="index.html">Home Page</a></li>
         <li><a href="needhelp.html">Help Me</a></li>
         <li><a href="changedetails.html">Change Details</a></li>
         <li class="active"><a>Map</a></li>
@@ -126,7 +125,7 @@
       function changeOpacity() {
         heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
       }
-	  
+
 	  function getBlips() {
         return [
           {position: new google.maps.LatLng(-27.4698, 153.0251), type: 'pepe'},
@@ -135,13 +134,13 @@
           {position:new google.maps.LatLng(-27.2678, 153.0251), type: 'datboi'},
 		  ];
 	  }
-	  
-	  function drawBlips() {		
-	  
+
+	  function drawBlips() {
+
 		var icons = {pepe: {icon: 'pepe.png'}, datboi: {icon: 'boi.png'}};
-		
+
 		var features = getBlips();
-		
+
 		for (var i = 0, feature; feature = features[i];i++){
 			var marker = new google.maps.Marker({
 			position: feature.position,
