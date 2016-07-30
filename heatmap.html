@@ -116,7 +116,21 @@
           data:pointArray,
           map: map
         });
-        getRequests();
+
+        var layer = new google.maps.FusionTablesLayer({
+          map: map,
+          heatmap: { enabled: false },
+          query: {
+            select: "col2",
+            from: "1yomH5GU8on0bda4-v_PPqlumwc66Ao5pLyJRmp2A",
+            where: ""
+          },
+          options: {
+            styleId: 3,
+            templateId: 3
+          }
+        });
+      //  getRequests();
           //drawBlips();
 
       }
