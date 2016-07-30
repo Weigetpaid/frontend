@@ -46,19 +46,52 @@ body {
 
 /*index*/
 .titleImg {
-  width:250px
+  width:150px
+}
+
+.indexInfo button{
+  background-color: #333;
+  min-width:200px;
+  margin-top:20px;
 }
 
 .indexInfo h1 {
-  font-size: 1.5em;
+  font-size: 1em;
+  margin: 10px 0 5px 0;
 }
 
 .indexInfo h2 {
   font-size: 1.2em;
+  margin: 10px 0 10px 0;
 }
 
-.indexInfo .form-signin {
-  border: 0;
+.indexInfo form{
+  margin:auto;
+  border:none;
+  padding:0;
+  background-color: transparent;
+}
+
+#indexButton{
+  background-color: #333;
+  min-width:200px;
+  margin-top: 10px;
+}
+
+#geocomplete{
+  max-width: 90%;
+  margin:auto;
+}
+
+#bg {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  z-index: -1;
+  
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
 }
 
 /* mapTemplate.html */
@@ -138,6 +171,7 @@ footer {
   height:45px;
   background-color: #333;
 }
+
 .footer-nav {
   margin: 5px;
 }
@@ -218,8 +252,8 @@ footer {
 
 .btn-primary {
   color: #fff;
-  background-color: #428bca;
-  border-color: #357ebd;
+  background-color: green;
+  border-color: none;
 }
 
 .btn-primary:hover,
@@ -228,8 +262,8 @@ footer {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
   color: #fff;
-  background-color: #3276b1;
-  border-color: #285e8e;
+  background-color: #004D00;
+  border-color: none;
 }
 
 /***********************
@@ -258,14 +292,14 @@ footer {
 }
 
 .btn-primary {
-    background: #0099cc;
+    background-color: green;
     color: #ffffff;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
-    background: #33a6cc;
+    background: #004D00;
 }
 .btn-primary:active, .btn-primary.active {
-    background: #007299;
+    background: #004D00;
     box-shadow: none;
 }
 

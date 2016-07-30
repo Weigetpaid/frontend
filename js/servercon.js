@@ -1,10 +1,10 @@
-function newRequest(name, phonenumber, lat, lng, category, desc, numpeople, timeestimate, completed) {
+function newRequest(name, phonenumber, lat, lng, category, desc, numpeople, timeestimate) {
 	console.log("Fuck");
-	
+
 	$.ajax({
 	  url: "http://api.weigetpaid.timhadwen.com/request",
 	  type:"POST",
-	  data: JSON.stringify({phone: phonenumber, name: name, lat: lat, lng: lng, name: name, category: category, desc: desc, numpeople: numpeople, timeestimate: timeestimate, completed: completed}),
+	  data: JSON.stringify({phone: phonenumber, name: name, lat: lat, lng: lng, name: name, category: category, desc: desc, numpeople: numpeople, timeestimate: timeestimate}),
 	  contentType: "application/json",
 	  dataType: "json",
 	  success: function(){
