@@ -67,7 +67,7 @@ h1{
   font-size: 2.5em;
   left: 20px;
   top: 20px !important;
-  color:#fff;
+  color:#333;
 }
 
 .sidebar {
@@ -93,10 +93,11 @@ h1{
 
 .sidebar li {
   list-style-type:none;
-  padding:20px;
+
   border-top: 1px solid black;
   white-space: nowrap;
-  font-size: 2em;
+  font-size: 1.5em;
+  text-align:left;
 }
 
 .sidebar li:last-child {
@@ -110,7 +111,14 @@ h1{
 .sidebar li a {
   color:white;
   text-decoration: none;
+  display:block;
+  padding:20px;
 }
+
+.sidebar li a:hover {
+  background:teal;
+}
+
 .mainMap {
   background:green;
 }
