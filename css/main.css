@@ -4,6 +4,14 @@ html, body {
   padding: 0;
   text-align: center;
 }
+  /* Following two rules needed for footer alignment */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 45px;
+}
 
 h1{
   font-family: 'Open Sans', sans-serif;
@@ -112,6 +120,9 @@ h1{
 }
 
 footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   height:45px;
   background-color: #333;
 }
