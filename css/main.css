@@ -71,7 +71,9 @@ h1{
 }
 
 .sidebar {
-  background: gray;
+  text-align: left;
+  font-size: 0.75em;
+  background: #333;
   overflow:hidden;
   width:0;
   transition: 0.2s;
@@ -82,7 +84,7 @@ h1{
 }
 
 .sidebar ul {
-  margin-top: 60px;
+  margin-top: 70px;
   margin-bottom: 0;
   margin-left: 0;
   width: 100%;
@@ -93,19 +95,19 @@ h1{
 
 .sidebar li {
   list-style-type:none;
-
-  border-top: 1px solid black;
+  padding:20px;
+  border-top: 1px solid #444;
   white-space: nowrap;
   font-size: 1.5em;
   text-align:left;
 }
 
 .sidebar li:last-child {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #444;
 }
 
 .sidebar li.active {
-  background:teal;
+  background:green;
 }
 
 .sidebar li a {
@@ -152,7 +154,7 @@ footer {
   margin: 0 auto;
   background-color: #fff;
   border: 1px solid rgba(0,0,0,0.1);
-
+}
   .form-signin-heading,
 	.checkbox {
 	  margin-bottom: 30px;
@@ -168,7 +170,7 @@ footer {
 	  height: auto;
 	  padding: 10px;
 		@include box-sizing(border-box);
-
+}
 		&:focus {
 		  z-index: 2;
 		}
@@ -212,4 +214,12 @@ footer {
 .indexSpacing{
   margin-bottom: 0px;
   padding-top:5%;
+}
+
+
+.black{
+  color:black;
+}
+.clicked {
+  color:white;
 }
