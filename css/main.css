@@ -160,6 +160,10 @@ body {
   color:white;
 }
 
+.topHeader{
+  font-size: 1.75em;
+}
+
 .mainMap {
   background:green;
 }
@@ -181,7 +185,6 @@ footer {
   margin: 5px;
 }
 @import "bourbon";
-
 
 .wrapper {
 	margin-top: 30px;
@@ -319,6 +322,7 @@ footer {
 
 .whiteBurger{
   color:white;
+<<<<<<< HEAD
 }
 
 .glyphicon {
@@ -336,3 +340,6 @@ footer {
   height: 100%;
   float: left;
 }
+=======
+}
+>>>>>>> origin/master
