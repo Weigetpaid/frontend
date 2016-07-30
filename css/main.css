@@ -46,19 +46,52 @@ body {
 
 /*index*/
 .titleImg {
-  width:250px
+  width:150px
+}
+
+.indexInfo button{
+  background-color: #333;
+  min-width:200px;
+  margin-top:20px;
 }
 
 .indexInfo h1 {
-  font-size: 1.5em;
+  font-size: 1em;
+  margin: 10px 0 5px 0;
 }
 
 .indexInfo h2 {
   font-size: 1.2em;
+  margin: 10px 0 10px 0;
 }
 
-.indexInfo .form-signin {
-  border: 0;
+.indexInfo form{
+  margin:auto;
+  border:none;
+  padding:0;
+  background-color: transparent;
+}
+
+#indexButton{
+  background-color: #333;
+  min-width:200px;
+  margin-top: 10px;
+}
+
+#geocomplete{
+  max-width: 90%;
+  margin:auto;
+}
+
+#bg {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  z-index: -1;
+  
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
 }
 
 /* mapTemplate.html */

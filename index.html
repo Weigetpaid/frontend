@@ -21,7 +21,9 @@
 
 <body class="indexSpacing">
 
-  <img class ="titleImg"src="Carl.png">
+  <img src="background.png" id="bg" alt="">
+
+  <img class ="titleImg"src="happycarl.png">
 
 <div class="indexInfo">
   <div class="crikey-header">
@@ -30,15 +32,14 @@
 
   <h2>Helping your community</h2>
   <br>
-  <button type="button" class="btn btn-primary btn-lg buttonPrimary getLocal">
+  <button type="button" class="btn btn-primary btn-lg getLocal">
       <i class="fa fa-map-marker"></i> Use Location
   </button>
   <h2> or </h2>
 
-<form class="form-signin">
+<form class="form-signin addressEnter">
       <input class="form-control" id="geocomplete" type="text" placeholder="Type in an address" size="90" />
-      <br>
-      <input class="btn btn-lg btn-primary btn-inline buttonPrimary" id="find" type="submit" value="Save" />
+      <input id="indexButton" class="btn btn-lg btn-primary btn-inline" id="find" type="submit" value="Save" />
     </form>
 </div>
     <script src="js/location.js"></script>
