@@ -148,3 +148,10 @@ footer {
 	  border-top-right-radius: 0;
 	}
 }
+
+.secondStep {
+  white-space:normal !important;
+  word-wrap:break-word;
+  margin-top:20px;
+  margin-bottom:20px;
+}
