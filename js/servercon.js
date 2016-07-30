@@ -1,4 +1,4 @@
-function newRequest(name, phonenumber, lat, lng, name, category, desc, numpeople, timeestimate, completed) {
+function newRequest(name, phonenumber, lat, lng, category, desc, numpeople, timeestimate, completed) {
 	console.log("Fuck");
 	
 	$.ajax({

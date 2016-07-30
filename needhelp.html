@@ -12,6 +12,17 @@
     <script src="https://use.fontawesome.com/1af0c15e61.js"></script>
   </head>
 <body>
+  <nav class="sidebar">
+    <ul>
+      <li><a href="needhelp.html">Help Me</a></li>
+      <li class="active"><a>Change Details</a></li>
+      <li><a href="heatmap.html">Map</a></li>
+      <li><a href="onlineresources.html">Online Resources</a></li>
+    </ul>
+  </nav>
+  <span class="glyphicon glyphicon-menu-hamburger burger" aria-hidden="true"></span>
+
+
   <div class="container" id="helpForm">
     <form>
       <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
@@ -89,6 +100,7 @@
 </div>
     </form>
   </div>
+  <script src="js/nav.js"></script>
   <script>
     $(".firstStep").click(function (event) {
       $(".form-step-one").hide();
