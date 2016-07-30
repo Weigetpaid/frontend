@@ -13,7 +13,7 @@ function newRequest(name, phonenumber, lat, lng, category, desc, numpeople, time
 	});
 }
 
-function getRequests() {
+function getRequests(callback) {
 	$.ajax({
 	    url: "http://weigetpaid.timhadwen.com/api/request",
 	    type: "GET",
@@ -22,11 +22,11 @@ function getRequests() {
 	        //here is your json.
 	          // process it
 	          console.log(resultData);
-	          return resultData;
+	          callback(resultData);
 	    },
 	    error : function(jqXHR, textStatus, errorThrown) {
 	    },
-	
+
 	    timeout: 120000,
 	});
 }
@@ -47,7 +47,7 @@ function getRequestsForUser(phonenumber) {
 	    },
 	    error : function(jqXHR, textStatus, errorThrown) {
 	    },
-	
+
 	    timeout: 120000,
 	});
 }
