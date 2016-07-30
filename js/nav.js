@@ -14,7 +14,6 @@ $( document ).ready(function() {
     $(document).click(function() {
       console.log($(".sidebar").hasClass('on'));
       if($(".sidebar").hasClass('on')) {
-        console.log("fuuuck");
         $('.sidebar').removeClass("on");
       }
     });
