@@ -2,7 +2,7 @@ function newRequest(name, phonenumber, lat, lng, category, desc, numpeople, time
 	console.log("Fuck");
 
 	$.ajax({
-	  url: "http://api.weigetpaid.timhadwen.com/request",
+	  url: "http://weigetpaid.timhadwen.com/api/request",
 	  type:"POST",
 	  data: JSON.stringify({phone: phonenumber, name: name, lat: lat, lng: lng, name: name, category: category, desc: desc, numpeople: numpeople, timeestimate: timeestimate}),
 	  contentType: "application/json",
@@ -36,7 +36,7 @@ function getRequests(callback) {
 */
 function getRequestsForUser(phonenumber) {
 	$.ajax({
-	    url: "http://api.weigetpaid.timhadwen.com/request/" + phonenumber,
+	    url: "http://weigetpaid.timhadwen.com/api/request/" + phonenumber,
 	    type: "GET",
 	    contentType: 'application/json; charset=utf-8',
 	    success: function(resultData) {
