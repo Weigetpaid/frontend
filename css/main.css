@@ -28,3 +28,10 @@ html, body {
   top: 10px;
   z-index: 5;
 }
+footer {
+  height:45px;
+  background-color: #333;
+}
+footer > div {
+  margin: 5px;
+}
