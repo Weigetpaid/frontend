@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
     <title>Crikey!</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -14,6 +15,7 @@
     <form>
       <!--Step one of multi step form -->
       <div class="form-step-one">
+        <br><br>
         <h3>Enter Details</h3>
         <div class="form-group">
           <input type="name" class="form-control" id="nameInput" placeholder="Name">
@@ -21,16 +23,27 @@
         <div class="form-group">
           <input type="phone" class="form-control" id="phoneInput" placeholder="Phone">
         </div>
-        <button type="submit" class="btn btn-default firstStep">Submit</button>
+        <br>
+        <p>We understand that privacy is important. That's why your number will not be seen by anyone by you.</p>
+        <br>
+        <button type="submit" class="btn btn-default firstStep">Next</button>
       </div>
 
       <!--Step two -->
       <div class="form-step-two" style="display:none">
-        <h3>Need Help with..</h3>
-        <button type="submit" class="btn btn-default secondStep">Accommodation</button>
+        <h3>What do you need help with?</h3>
+        <button type="submit" class="btn btn-default secondStep">
+          <h5>Accommodation<h5>
+            <h6>test</h6>
+        </button>
+        <br>
+
         <button type="submit" class="btn btn-default secondStep">Transportation</button>
+        <br>
         <button type="submit" class="btn btn-default secondStep">Services</button>
+        <br>
         <button type="submit" class="btn btn-default secondStep">Other</button>
+        <br>
       </div>
 
       <!--Step three -->
@@ -65,7 +78,7 @@
       $(".form-step-three").show();
       event.preventDefault();
     });
-    
+
   </script>
 </body>
 <html>
