@@ -1,10 +1,10 @@
-function newRequest(name, phonenumber, lat, lng) {
+function newRequest(name, phonenumber, lat, lng, name, category, desc, numpeople, timeestimate, completed) {
 	console.log("Fuck");
 	
 	$.ajax({
 	  url: "http://api.weigetpaid.timhadwen.com/request",
 	  type:"POST",
-	  data: JSON.stringify({phone: phonenumber, name: name, lat: lat, lng: lng}),
+	  data: JSON.stringify({phone: phonenumber, name: name, lat: lat, lng: lng, name: name, category: category, desc: desc, numpeople: numpeople, timeestimate: timeestimate, completed: completed}),
 	  contentType: "application/json",
 	  dataType: "json",
 	  success: function(){
@@ -16,6 +16,27 @@ function newRequest(name, phonenumber, lat, lng) {
 function getRequests() {
 	$.ajax({
 	    url: "http://api.weigetpaid.timhadwen.com/request",
+	    type: "GET",
+	    contentType: 'application/json; charset=utf-8',
+	    success: function(resultData) {
+	        //here is your json.
+	          // process it
+	          console.log(resultData);
+	          return resultData;
+	    },
+	    error : function(jqXHR, textStatus, errorThrown) {
+	    },
+	
+	    timeout: 120000,
+	});
+}
+
+/**
+	Yet to be tested
+*/
+function getRequestsForUser(phonenumber) {
+	$.ajax({
+	    url: "http://api.weigetpaid.timhadwen.com/request/" + phonenumber,
 	    type: "GET",
 	    contentType: 'application/json; charset=utf-8',
 	    success: function(resultData) {
