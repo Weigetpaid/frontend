@@ -12,7 +12,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/1af0c15e61.js"></script>
     <script src="js/servercon.js"></script>
-    
+
     <script type="text/javascript" src="js/seslocations.js"></script>
   </head>
 
@@ -138,10 +138,6 @@
           map.setCenter(new google.maps.LatLng(parseFloat(sessionStorage.getItem('lastLat')),parseFloat(sessionStorage.getItem('lastLong'))));
       });
 
-
-        getRequests();
-
-
         google.maps.event.addDomListener(document.getElementById('togFlood'), 'change', function () {
           toggleFlood();
       });
@@ -203,19 +199,18 @@
 
 		var icons = {pepe: {icon: 'pepe.png'}, datboi: {icon: 'boi.png'}};
 
-		var features = getBlips();
-
-		for (var i = 0, feature; feature = features[i];i++){
-			var marker = new google.maps.Marker({
-			position: feature.position,
-			icon: icons[feature.type].icon,
-  			map: map,
+	getResults(function(feature){
+    for (var i = 0, feature; feature = features[i];i++){
+      var marker = new google.maps.Marker({
+      position: feature.position,
+      icon: icons[feature.type].icon,
+        map: map,
         type: feature.type,
         state:"in progress",
         description: "Forever alone",
         numParticipants: "3",
         time: "30mins"
-	    });
+      });
 
       google.maps.event.addListener(marker, 'click', function() {
         console.log(this.type);
@@ -226,7 +221,11 @@
         $("#MarkerParticipants").text(this.numParticipants);
         $("#MarkerTime").text(this.time);
         });
-	    }
+      }
+
+    });
+
+
 	  }
     </script>
     <script async defer

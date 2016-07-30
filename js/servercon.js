@@ -2,7 +2,7 @@ function newRequest(name, phonenumber, lat, lng, category, desc, numpeople, time
 	console.log("Fuck");
 
 	$.ajax({
-	  url: "http://api.weigetpaid.timhadwen.com/request",
+	  url: "http://weigetpaid.timhadwen.com/api/request",
 	  type:"POST",
 	  data: JSON.stringify({phone: phonenumber, name: name, lat: lat, lng: lng, name: name, category: category, desc: desc, numpeople: numpeople, timeestimate: timeestimate}),
 	  contentType: "application/json",
@@ -13,7 +13,7 @@ function newRequest(name, phonenumber, lat, lng, category, desc, numpeople, time
 	});
 }
 
-function getRequests() {
+function getRequests(callback) {
 	$.ajax({
 	    url: "http://weigetpaid.timhadwen.com/api/request",
 	    type: "GET",
@@ -22,11 +22,11 @@ function getRequests() {
 	        //here is your json.
 	          // process it
 	          console.log(resultData);
-	          return resultData;
+	          callback(resultData);
 	    },
 	    error : function(jqXHR, textStatus, errorThrown) {
 	    },
-	
+
 	    timeout: 120000,
 	});
 }
@@ -36,7 +36,7 @@ function getRequests() {
 */
 function getRequestsForUser(phonenumber) {
 	$.ajax({
-	    url: "http://api.weigetpaid.timhadwen.com/request/" + phonenumber,
+	    url: "http://weigetpaid.timhadwen.com/api/request/" + phonenumber,
 	    type: "GET",
 	    contentType: 'application/json; charset=utf-8',
 	    success: function(resultData) {
@@ -47,7 +47,7 @@ function getRequestsForUser(phonenumber) {
 	    },
 	    error : function(jqXHR, textStatus, errorThrown) {
 	    },
-	
+
 	    timeout: 120000,
 	});
 }
