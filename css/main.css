@@ -78,7 +78,7 @@ h1{
   height:100%;
   position:fixed;
   z-index: 2;
-  border-right: 1px solid black;
+
 }
 
 .sidebar ul {
@@ -117,6 +117,7 @@ h1{
 
 .on {
   width:70%;
+  border-right: 1px solid black;
 }
 
 footer {
