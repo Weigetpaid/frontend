@@ -76,13 +76,13 @@
         map = new google.maps.Map(document.getElementById('map'), {
           zoom: 13,
           center: {lat:-27.4698, lng: 153.0251},
-          mapTypeId: 'satellite'
+          mapTypeId: 'roadmap'
         });
-        var bronyZips =[
+        var array =[
           new google.maps.LatLng(-27.4698, 153.0251)
 
         ];
-        var pointArray = new google.maps.MVCArray(bronyZips);
+        var pointArray = new google.maps.MVCArray(array);
         heatmap = new google.maps.visualization.HeatmapLayer({
           data:pointArray,
           map: map
