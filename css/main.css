@@ -38,7 +38,7 @@ h1{
 .burger {
   position:fixed !important;
   z-index:2;
-  font-size: 2.5em;
+  font-size: 8em;
   left: 20px;
   top: 20px !important;
 }
@@ -55,7 +55,7 @@ h1{
 }
 
 .sidebar ul {
-  margin-top: 60px;
+  margin-top: 150px;
   margin-bottom: 0;
   margin-left: 0;
   width: 100%;
@@ -66,9 +66,10 @@ h1{
 
 .sidebar li {
   list-style-type:none;
-  padding:20px;
+  padding:40px;
   border-top: 1px solid black;
   white-space: nowrap;
+  font-size: 5em;
 }
 
 .sidebar li:last-child {
@@ -79,9 +80,7 @@ h1{
   background:teal;
 }
 
-.sidebar li a,
-.sidebar li a:visted,
-.sidebar li a:link  {
+.sidebar li a {
   color:white;
   text-decoration: none;
 }
