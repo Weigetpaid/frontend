@@ -20,24 +20,20 @@
     </nav>
     <span class="glyphicon glyphicon-menu-hamburger burger" aria-hidden="true"></span>
 
-    <div id="floating-panel">
-      <button onclick="toggleHeatmap()">Toggle Heatmap</button>
-      <button onclick="changeGradient()">Change gradient</button>
-      <button onclick="changeRadius()">Change radius</button>
-      <button onclick="changeOpacity()">Change opacity</button>
-    </div>
     <div id="map"></div>
 
     <footer class="footer">
-      <div class="container pull-left">
-        <button type="button" class="btn btn-primary btn-md">
-          <i class="fa fa-paper-plane"></i>
-        </button>
-      </div>
-      <div class="container pull-right">
-        <button type="button" class="btn btn-primary btn-md right" data-toggle="modal" data-target="#filterModal">
-          <i class="fa fa-filter"></i>
-        </button>
+      <div class="container">
+        <div class="pull-left footer-nav">
+          <button type="button" class="btn btn-primary btn-md">
+            <i class="fa fa-paper-plane"></i>
+          </button>
+        </div>
+        <div class="pull-right footer-nav">
+          <button type="button" class="btn btn-primary btn-md right" data-toggle="modal" data-target="#filterModal">
+            <i class="fa fa-filter"></i>
+          </button>
+        </div>
       </div>
     </footer>
     <!-- Filters Modal -->
