@@ -160,6 +160,10 @@ body {
   color:white;
 }
 
+.topHeader{
+  font-size: 1.75em;
+}
+
 .mainMap {
   background:green;
 }
@@ -181,7 +185,6 @@ footer {
   margin: 5px;
 }
 @import "bourbon";
-
 
 .wrapper {
 	margin-top: 30px;
