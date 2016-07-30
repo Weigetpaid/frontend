@@ -4,41 +4,71 @@
 <head>
     <meta charset="utf-8">
     <title>Crikey!</title>
+    <meta name="viewport" content="width=device-width">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/1af0c15e61.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/main.css">
 
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+
 </head>
 
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="text-center">
-                <img src="Carl.png" width="400" height="300">
-                <h1>Crikey!</h1>
-                <h2>Helping your community</h2>
-              <br>
-                <button type="button" class="btn btn-primary btn-lg">
-                    <i class="fa fa-map-marker"></i> Use Location
-                </button>
-                <h2> Or </h2>
-                    <div class="wrapper">
-                        <form class="form-signin">
-                            <h2 class="form-signin-heading">Please Enter Location</h2>
-                            <input type="text" class="form-control" name="street" placeholder="Address" required="" autofocus="" />
-                            <br>
-                            <button class="btn btn-lg btn-primary btn-block" type="submit"> Save</button>
-                            </button>
-                        </form>
-                </div>
-            </div>
+<body class="indexSpacing">
+  <img class ="titleImg"src="Carl.png">
 
-        </div>
-    </div>
+<div class="indexInfo">
+  <h1>Crikey!</h1>
+  <h2>Helping your community</h2>
+  <button type="button" class="btn btn-primary btn-lg buttonPrimary">
+      <i class="fa fa-map-marker"></i> Use Location
+  </button>
+  <h2> or </h2>
+
+<form class="form-signin">
+      <input class="form-control" id="geocomplete" type="text" placeholder="Type in an address" size="90" />
+      <br>
+      <input class="btn btn-lg btn-primary btn-inline buttonPrimary" id="find" type="submit" value="Save" />
+    </form>
+</div>
+    
+    <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+    <script src="js/jquery.geocomplete.min.js"></script>
+    <script src="js/logger.js"></script>
+
+    <pre id="logger" style="visibility: hidden;">Log:</pre>
+    
+    <script>
+      $(function(){
+        
+        $("#geocomplete").geocomplete()
+          .bind("geocode:result", function(event, result){
+            $.log("Result: " + result.formatted_address);
+          })
+          .bind("geocode:error", function(event, status){
+            $.log("ERROR: " + status);
+          })
+          .bind("geocode:multiple", function(event, results){
+            $.log("Multiple: " + results.length + " results found");
+          });
+        
+        $("#find").click(function(){
+          $("#geocomplete").trigger("geocode");
+        });
+        
+        
+        $("#examples a").click(function(){
+          $("#geocomplete").val($(this).text()).trigger("geocode");
+          return false;
+        });
+        
+      });
+    </script>
+
 
 </body>
 <html>
