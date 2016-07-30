@@ -30,7 +30,7 @@
     <footer class="footer">
       <div class="container">
         <div class="pull-left footer-nav">
-          <button type="button" class="btn btn-primary btn-md buttonPrimary">
+          <button type="button" class="btn btn-primary btn-md buttonPrimary" id="getLastLocal">
             <i class="fa fa-paper-plane"></i>
           </button>
         </div>
@@ -102,7 +102,7 @@
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           zoom: 13,
-          center: {lat: -27.4698, lng: 153.0251},
+          center: {lat: parseFloat(sessionStorage.getItem('lastLat')), lng: parseFloat(sessionStorage.getItem('lastLong'))},
           mapTypeId: 'roadmap',
           mapTypeControl: false
         });
@@ -115,6 +115,10 @@
           data:pointArray,
           map: map
         });
+        google.maps.event.addDomListener(document.getElementById('getLastLocal'), 'click', function () {
+          map.setCenter(new google.maps.LatLng(parseFloat(sessionStorage.getItem('lastLat')),parseFloat(sessionStorage.getItem('lastLong'))));
+      });
+
         $.ajax({
       	    url: "http://timhadwen.com:4000/request",
       	    type: "GET",
