@@ -17,12 +17,13 @@
 </head>
 
 <body class="indexSpacing">
+
   <img class ="titleImg"src="Carl.png">
 
 <div class="indexInfo">
   <h1>Crikey!</h1>
   <h2>Helping your community</h2>
-  <button type="button" class="btn btn-primary btn-lg buttonPrimary">
+  <button type="button" class="btn btn-primary btn-lg buttonPrimary getLocal">
       <i class="fa fa-map-marker"></i> Use Location
   </button>
   <h2> or </h2>
@@ -33,7 +34,7 @@
       <input class="btn btn-lg btn-primary btn-inline buttonPrimary" id="find" type="submit" value="Save" />
     </form>
 </div>
-    
+    <script src="js/location.js"></script>
     <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
@@ -41,10 +42,10 @@
     <script src="js/logger.js"></script>
 
     <pre id="logger" style="visibility: hidden;">Log:</pre>
-    
+
     <script>
       $(function(){
-        
+
         $("#geocomplete").geocomplete()
           .bind("geocode:result", function(event, result){
             $.log("Result: " + result.formatted_address);
@@ -55,18 +56,20 @@
           .bind("geocode:multiple", function(event, results){
             $.log("Multiple: " + results.length + " results found");
           });
-        
+
         $("#find").click(function(){
           $("#geocomplete").trigger("geocode");
         });
-        
-        
+
+
         $("#examples a").click(function(){
           $("#geocomplete").val($(this).text()).trigger("geocode");
           return false;
         });
-        
+
       });
+
+      
     </script>
 
 
