@@ -15,7 +15,7 @@ function newRequest(name, phonenumber, lat, lng, category, desc, numpeople, time
 
 function getRequests() {
 	$.ajax({
-	    url: "http://api.weigetpaid.timhadwen.com/request",
+	    url: "http://weigetpaid.timhadwen.com/api/request",
 	    type: "GET",
 	    contentType: 'application/json; charset=utf-8',
 	    success: function(resultData) {
