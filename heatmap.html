@@ -16,10 +16,12 @@
   <body>
     <nav class="sidebar">
       <ul>
-        <li><a>Help Me</a></li>
-        <li><a>Change Details</a></li>
+        <li><a href="index.html">Home Page</a></li>
+        <li><a href="needhelp.html">Help Me</a></li>
+        <li><a href="changedetails.html">Change Details</a></li>
         <li class="active"><a>Map</a></li>
-        <li><a>Online Resources</a></li>
+        <li><a href="onlineresources.html">Online Resources</a></li>
+      </ul>
     </nav>
     <span id="burger" class="glyphicon glyphicon-menu-hamburger burger black" aria-hidden="true"></span>
 
@@ -90,6 +92,7 @@
           data:pointArray,
           map: map
         });
+		drawBlips();
       }
 
       function toggleHeatmap() {
@@ -123,6 +126,30 @@
       function changeOpacity() {
         heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
       }
+	  
+	  function getBlips() {
+        return [
+          {position: new google.maps.LatLng(-27.4698, 153.0251), type: 'pepe'},
+          {position:new google.maps.LatLng(-27.4698, 153.0351), type: 'datboi'},
+          {position:new google.maps.LatLng(-27.4688, 153.0271), type: 'pepe'},
+          {position:new google.maps.LatLng(-27.2678, 153.0251), type: 'datboi'},
+		  ];
+	  }
+	  
+	  function drawBlips() {		
+	  
+		var icons = {pepe: {icon: 'pepe.png'}, datboi: {icon: 'boi.png'}};
+		
+		var features = getBlips();
+		
+		for (var i = 0, feature; feature = features[i];i++){
+			var marker = new google.maps.Marker({
+			position: feature.position,
+			icon: icons[feature.type].icon,
+			map: map
+		    });
+	    }
+	  }
     </script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKKrj7vW-dxHA_g4VmpDUqSbCp_d0OQvk&libraries=visualization&callback=initMap">
