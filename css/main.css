@@ -13,8 +13,9 @@ body {
   margin-bottom: 45px;
 }
 
-h1{
+.crikey-header{
   font-family: 'Open Sans', sans-serif;
+  font-size: 40px;
 }
 
 #map {
