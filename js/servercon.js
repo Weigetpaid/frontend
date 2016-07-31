@@ -55,7 +55,7 @@ function getRequestsForUser(phonenumber) {
 function addOneHelper(id) {
 	$.ajax({
 	    url: "http://weigetpaid.timhadwen.com/api/helper/" + id,
-	    type: "GET",
+	    type: "POST",
 	    contentType: 'application/json; charset=utf-8',
 	    success: function(resultData) {
 	        //here is your json.
