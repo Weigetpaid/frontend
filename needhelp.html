@@ -36,7 +36,7 @@
                     <br>
                     <div class="crikey-header">
                         <h1>Need Help?</h1>
-                        <br>
+                        <hr>
                     </div>
                     <div class="subheading">
                         <h2>Please enter your details</h2>
@@ -49,7 +49,7 @@
                         <input type="phone" class="form-control" id="phoneInput" placeholder="Phone">
                     </div>
                     <br>
-                    <p>We understand that privacy is important. That's why your number will not be seen by anyone by you.</p>
+                    <p>We understand that privacy is important. That's why your number will not be seen by anyone but you.</p>
                     <br>
                     <button type="button" class="btn btn-default firstStep">Next</button>
                 </div>
@@ -97,9 +97,10 @@
                 <div class="form-step-three" style="display:none">
                   <div class="crikey-header">
                   <h1 id="selectedButton">*Selected Button*</h1>
+                  <hr>
                 </div>
                 <div class="subheading">
-                    <h2>Please give some more details about your requirements</h2>
+                    <h2>Give some more details about your requirements</h2>
                 </div>
                   <textarea id="descriptionInput" class="form-control" rows="3" placeholder="E.g. I need help transporting sandbags from town hall to my house"></textarea>
                   <br>
@@ -120,7 +121,7 @@
                     <option>2 hours or more</option>
                   </select>
                   <br>
-                  <button type="button" onclick="submitHelpRequest()" class="btn btn-default thirdStep">Submit</button>
+                  <a href="heatmap.html"><button type="button"  onclick="submitHelpRequest()" class="btn btn-default thirdStep">Submit</button></a>
                 </div>
               </div>
             </form>
