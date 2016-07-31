@@ -114,6 +114,8 @@ body {
 .burger.right {
   left:inherit;
   right:20px;
+  font-size: 3em;
+  top: 10px !important;
 }
 
 .myLabel {
