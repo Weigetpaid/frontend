@@ -10,6 +10,13 @@ $(".secondStep").click(function (event) {
   event.preventDefault();
 });
 
+$(".helpFirstStep").click(function (event) {
+  $(".helpout-step-one").hide();
+  $(".helpout-step-two").show();
+  event.preventDefault();
+});
+
+
 function checkButtonValue(buttonValue) {
   document.getElementById('selectedButton').innerHTML = buttonValue;
 }
