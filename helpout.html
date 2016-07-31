@@ -18,15 +18,15 @@
 </head>
 
 <body>
-  <nav class="left">
-    <ul>
-      <li ><a href="needhelp.html">Help Me</a></li>
-      <li><a href="heatmap.html">Map</a></li>
-      <li><a href="myrequests.html">My Requests</a></li>
-      <li><a href="onlineresources.html">Online Resources</a></li>
-    </ul>
-  </nav>
-  <span id="burgerMenu" class="glyphicon glyphicon-menu-hamburger burger blackBurger left" aria-hidden="true"></span>
+   <nav class="sidebar left">
+      <ul>
+        <li><a href="needhelp.html">Help Me</a></li>
+        <li><a href="heatmap.html">Map</a></li>
+        <li><a href="myrequests.html">My Requests</a></li>
+        <li class="active"><a href="onlineresources.html">Online Resources</a></li>
+      </ul>
+    </nav>
+    <span id="burgerMenu" class="glyphicon glyphicon-menu-hamburger burger blackBurger left" aria-hidden="true"></span>
     <a href="myrequests.html"><span class="glyphicon glyphicon-remove add" aria-hidden="true"></span></a>
     <div class="container" id="helpForm">
         <form>
@@ -67,19 +67,23 @@
                         <h2>Give Help</h2>
                     </div>
                     <br>
-                    <label>Their name:</label><p id="jobName"></p>
-                    <label>Task Description:</label><p id="jobDescription"></p>
-                    <label>Their phone:</label><p id="jobPhone"></p>
+                    <label>Their name: <p id="jobName"></p></label>
+                    <label>Their phone: <p id="jobPhone"></p></label>
+                    <label>Task type: <p id="jobType"></p></label>
+                    <label>Task Description: <p id="jobDescription"></p></label>
+
                     <br>
 
-                    <label>Your name:</label><p id="yourName"></p>
-                    <label>Your phone:</label><p id="yourPhone"></p>
+                    <label>Your name: <p id="yourName"></p></label>
+                    <label>Your phone: <p id="yourPhone"></p></label>
                     <br>
-                    <button type="button" class="btn btn-primary firstStep">Confirm</button>
+                    <button type="button" onclick="" class="btn btn-primary firstStep">Confirm</button>
                 </div>
               </div>
             </form>
           </div>
+          <script>
+          </script>
           <script src="js/nav.js"></script>
           <script src="js/helpform.js"></script>
           <script src="js/servercon.js"></script>
