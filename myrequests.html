@@ -12,11 +12,21 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/1af0c15e61.js"></script>
+    <script src="js/servercon.js"></script>
 
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400italic,700' rel='stylesheet' type='text/css'>
 </head>
+
+        <script>
+        	var requests = getRequestsForUser(sessionStorage.getItem('phone'), function(requests) {
+	        	for(var i = 0; i < requests.length; i++) {
+	        		console.log(requests[i]);
+		        	$(".placeofthings").html($(".placeofthings").html() + "<ul><label>Task state</label><p id='MarkerState'>In Progress</p><label>Task Description</label><p id='MarkerDescription'>" + requests[i]['descr'] + "</p><div class=\"marker-inline\"><img src=\"People.png\"></img><label>Number of people required:</label><p id=\"MarkerParticipants\"> " + requests[i]['numpeople'] + "</p><div class=\"marker-inline\"><img src=\"timestimate.png\"></img><label>Estimated time required:</label><p id=\"MarkerTime\">" + requests[i]['timeestimate'] + "</p></div>");
+	        	}
+        	});
+        </script>
 
 <body>
   <nav class="sidebar left">
@@ -37,20 +47,8 @@
             <hr>
         </div>
         <div class="container">
-            <button type="button" class="btn btn-info btn-default btn-lg" data-toggle="collapse" data-target="#demo"><span class="glyphicon glyphicon-road" aria-hidden="true"></span> <h3>Transportation</h3></button>
-            <div id="demo" class="collapse">
-
-                <div class="row modal-body">
-                    <form>
-                        <ul>
-                          <label>Task state</label><p id="MarkerState"></p>
-                          <label>Task Description</label><p id="MarkerDescription"></p>
-                          <div class="marker-inline"><img src="People.png"></img><label>Number of people required:</label><p id="MarkerParticipants"></p></div>
-                          <div class="marker-inline"><img src="timestimate.png"></img><label>Estimated time required:</label><p id="MarkerTime"></p></div>
-                        </ul>
-                    </form>
-                </div>
-            </div>
+        	<div class="row modal-body placeofthings"></div>
+        </div>
 
         </div>
         <script src="js/nav.js"></script>
