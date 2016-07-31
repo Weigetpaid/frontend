@@ -44,7 +44,7 @@ function submitHelpRequest(){
   var timeValue = time.value;
   var lat = sessionStorage.getItem("lastLat");
   var lng = sessionStorage.getItem("lastLong");
-
+  sessionStorage.setItem("phone", document.getElementById('phoneInput').value);
   console.log(name, phone, lat, lng, category, desc, people, time)
   newRequest(name, phone, lat, lng, category, desc, people, time);
 }
@@ -54,4 +54,5 @@ function confirmHelp(){
   var parsedJob = JSON.parse(data);
 
   addOneHelper(parsedJob.id);
+
 }
