@@ -149,7 +149,6 @@
           
           drawIcons();
 
-
       }
 
       function toggleFlood() {
@@ -198,17 +197,18 @@
 	  }
 
 	  function drawBlips() {
-		var iconbase = 'base.png';
-		var icons = {accomodation: {icon: iconbase + 'accomodationz.png'},
-					transport: {icon: iconbase + 'transport.png'},
-					service: {icon: iconbase + 'Service.png'},
-					other: {icon: iconbase + 'other.png'}};
+
+		var icons = {Accomodation: {icon: 'accomodation.png'},
+					Transport: {icon: 'transport.png'},
+					Service: {icon: 'Service.png'},
+					other: {icon: 'others.png'}};
+
 	getRequests(function(features){
     for (var i = 0, features; feature = features[i];i++){
-      console.log(feature);
+      console.log(icons[feature.category].icon);
       var marker = new google.maps.Marker({
-      position: feature.position,
-      icon: icons["other"].icon,
+      position: {lat: -(feature.lat), lng:feature.lng},
+      icon: icons[feature.category].icon,
         map: map,
         type: feature.category,
         state:"In Progress",
