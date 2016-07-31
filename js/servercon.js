@@ -4,7 +4,7 @@ function newRequest(name, phonenumber, lat, lng, category, desc, numpeople, time
 	$.ajax({
 	  url: "http://weigetpaid.timhadwen.com/api/request",
 	  type:"POST",
-	  data: JSON.stringify({phone: phonenumber, name: name, lat: lat, lng: lng, name: , category: category, desc: desc, numpeople: numpeople, timeestimate: timeestimate}),
+	  data: JSON.stringify({phone: phonenumber, name: name, lat: lat, lng: lng, name: name, category: category, desc: desc, numpeople: numpeople, timeestimate: timeestimate}),
 	  contentType: "application/json",
 	  dataType: "json",
 	  success: function(){
