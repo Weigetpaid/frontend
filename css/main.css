@@ -104,6 +104,15 @@ body {
   color:#333;
 }
 
+.burger.right {
+  left:inherit;
+  right:20px;
+}
+
+.myLabel {
+  color:white;
+}
+
 .sidebar {
   text-align: left;
   font-size: 0.75em;
@@ -115,6 +124,14 @@ body {
   position:fixed;
   z-index: 2;
 
+}
+
+.sidebar.right {
+  right:0px;
+}
+
+.sidebar.right.on {
+  width:30%;
 }
 
 .sidebar ul {
@@ -152,9 +169,7 @@ body {
   padding:10px;
 }
 
-.sidebar li:hover{
-  border-left: 10px solid #222;
-}
+
 
 .sidebar li a:hover {
   color:white;
