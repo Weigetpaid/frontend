@@ -48,3 +48,10 @@ function submitHelpRequest(){
   console.log(name, phone, lat, lng, category, desc, people, time)
   newRequest(name, phone, lat, lng, category, desc, people, time);
 }
+
+function confirmHelp(){
+  var data = sessionStorage.getItem("data");
+  var parsedJob = JSON.parse(data);
+
+  addOneHelper(parsedJob.id);
+}
