@@ -20,7 +20,6 @@
     <nav class="sidebar">
       <ul>
         <li><a href="needhelp.html">Help Me</a></li>
-        <li><a href="changedetails.html">Change Details</a></li>
         <li class="active"><a>Map</a></li>
         <li><a href="myrequests.html">My Requests</a></li>
         <li><a href="onlineresources.html">Online Resources</a></li>
@@ -186,19 +185,22 @@
         heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
       }
 
+
 	  function getBlips() {
         return [
-          {position: new google.maps.LatLng(-27.4698, 153.0251), type: 'pepe'},
-          {position:new google.maps.LatLng(-27.4698, 153.0351), type: 'datboi'},
-          {position:new google.maps.LatLng(-27.4688, 153.0271), type: 'pepe'},
-          {position:new google.maps.LatLng(-27.2678, 153.0251), type: 'datboi'},
+          {position: new google.maps.LatLng(-27.4698, 153.0251), type: 'accomodation'},
+          {position:new google.maps.LatLng(-27.4698, 153.0351), type: 'transport'},
+          {position:new google.maps.LatLng(-27.2678, 153.0251), type: 'service'},
+		  {position:new google.maps.LatLng(-27.2878, 153.0271), type: 'other'}
 		  ];
 	  }
 
 	  function drawBlips() {
-
-		var icons = {"other": {icon: 'pepe.png'}, "accomodation": {icon: 'boi.png'}};
-
+		var iconbase = 'base.png';
+		var icons = {accomodation: {icon: iconbase + 'accomodationz.png'},
+					transport: {icon: iconbase + 'transport.png'},
+					service: {icon: iconbase + 'Service.png'},
+					other: {icon: iconbase + 'other.png'}};
 	getRequests(function(features){
     for (var i = 0, features; feature = features[i];i++){
       console.log(feature);
