@@ -206,7 +206,7 @@
     for (var i = 0, features; feature = features[i];i++){
       console.log(icons[feature.category].icon);
       var marker = new google.maps.Marker({
-      position: {lat: feature.lat, feature.lng},
+      position: {lat: feature.lat, lng:feature.lng},
       icon: icons[feature.category].icon,
         map: map,
         type: feature.category,
