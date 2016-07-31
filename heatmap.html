@@ -14,6 +14,7 @@
     <script src="js/servercon.js"></script>
 
     <script type="text/javascript" src="js/seslocations.js"></script>
+    <script type="text/javascript" src="js/131940.js"></script>
   </head>
 
   <body>
@@ -77,13 +78,10 @@
         <h4 class="modal-title" id="MarkerTitle"></h4>
       </div>
       <div class="modal-body">
-          <p id="MarkerState">
-          </p>
-          <p id="MarkerDescription">
-          </p>
-          <div class="marker-inline"><img src=""></img><p id="MarkerParticipants"></p></div>
-          <div class="marker-inline"><img src=""></img><p id="MarkerTime"></p></div>
-
+        <label>Task state</label><p id="MarkerState"></p>
+        <label>Task Description</label><p id="MarkerDescription"></p>
+        <div class="marker-inline"><img src="People.png"></img><label>Number of people required:</label><p id="MarkerParticipants"></p></div>
+        <div class="marker-inline"><img src="timestimate.png"></img><label>Estimated time required:</label><p id="MarkerTime"></p></div>
 
       </div>
       <div class="modal-footer">
@@ -234,29 +232,41 @@
 	  }
 
 	  function drawIcons() {
+		var sesicon = {
+			url: "ses.png", // url
+			scaledSize: new google.maps.Size(25, 25), // scaled size
+			origin: new google.maps.Point(0,0), // origin
+			anchor: new google.maps.Point(0, 0) // anchor
+		};
 
-		var icons = {pepe: {icon: 'pepe.png'}, datboi: {icon: 'boi.png'}};
+		var trafficicon = {
+			url: "vlc.png", // url
+			scaledSize: new google.maps.Size(25, 25), // scaled size
+			origin: new google.maps.Point(0,0), // origin
+			anchor: new google.maps.Point(0, 0) // anchor
+		};
 
 		seslocations_getdata(function(locations) {
 			for (var i = 0; i < locations['geometries'].length; i++){
-				var location = {lat: locations['geometries'][i]['coordinates'][0], lng: locations['geometries'][i]['coordinates'][1]};
+				var location = {lat: locations['geometries'][i]['coordinates'][1], lng: locations['geometries'][i]['coordinates'][0]};
 				var marker = new google.maps.Marker({
 					position: location,
 		  			map: map,
-			        title: "FUCK"
+			        icon: sesicon,
 				});
-/*
+			}
+		});
 
-				google.maps.event.addListener(marker, 'click', function() {
-			        console.log(this.type);
-			        $('#markerModal').modal('show')
-			        $("#MarkerTitle").text(this.type);
-			        $("#MarkerState").text(this.state);
-			        $("#MarkerDescription").text(this.description);
-			        $("#MarkerParticipants").text(this.numParticipants);
-			        $("#MarkerTime").text(this.time);
+		getdata_131940(function(locations) {
+			console.log("Traffic data");
+			console.log(locations['features']);
+			for (var i = 0; i < locations['features'].length; i++) {
+				var location = {lat: locations['features'][i]['geometry']['geometries'][0]['coordinates'][1], lng: locations['features'][i]['geometry']['geometries'][0]['coordinates'][0]};
+				var marker = new google.maps.Marker({
+					position: location,
+		  			map: map,
+			        icon: trafficicon,
 				});
-*/
 			}
 		});
 	}
