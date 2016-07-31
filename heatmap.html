@@ -146,7 +146,7 @@
 /*       	  getRequests(); */
 
           drawBlips();
-          
+
           drawIcons();
 
       }
@@ -198,7 +198,7 @@
 
 	  function drawBlips() {
 
-		var icons = {Accomodation: {icon: 'accomodation.png'},
+		var icons = {Accommodation: {icon: 'accomodation.png'},
 					Transportation: {icon: 'transport.png'},
 					Services: {icon: 'Service.png'},
 					Other: {icon: 'others.png'}};
@@ -232,11 +232,11 @@
 
 
 	  }
-	  
+
 	  function drawIcons() {
 
 		var icons = {pepe: {icon: 'pepe.png'}, datboi: {icon: 'boi.png'}};
-		
+
 		seslocations_getdata(function(locations) {
 			for (var i = 0; i < locations['geometries'].length; i++){
 				var location = {lat: locations['geometries'][i]['coordinates'][0], lng: locations['geometries'][i]['coordinates'][1]};
@@ -246,7 +246,7 @@
 			        title: "FUCK"
 				});
 /*
-		
+
 				google.maps.event.addListener(marker, 'click', function() {
 			        console.log(this.type);
 			        $('#markerModal').modal('show')
@@ -260,8 +260,8 @@
 			}
 		});
 	}
-	  
-	  
+
+
     </script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKKrj7vW-dxHA_g4VmpDUqSbCp_d0OQvk&libraries=visualization&callback=initMap">
