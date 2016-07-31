@@ -1,3 +1,8 @@
+if (sessionStorage.getItem("lastLat") === null
+    || sessionStorage.getItem("lastLong") === null){
+  window.location.replace("./index.html");
+}
+
 $( document ).ready(function() {
     $(".burger").click(function() {
       if ($(".sidebar").hasClass('on')) {

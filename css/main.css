@@ -84,11 +84,11 @@ body {
 }
 
 #bg {
-  position: fixed; 
-  top: 0; 
-  left: 0; 
+  position: fixed;
+  top: 0;
+  left: 0;
   z-index: -1;
-  
+
   /* Preserve aspet ratio */
   min-width: 100%;
   min-height: 100%;
@@ -141,7 +141,8 @@ body {
 }
 
 .sidebar li.active {
-  background:green;
+  background:#428bca;
+  font:#333;
 }
 
 .sidebar li a {
@@ -151,8 +152,16 @@ body {
   padding:10px;
 }
 
+.sidebar li:hover{
+  border-left: 10px solid #222;
+}
+
 .sidebar li a:hover {
-  color:lightgreen;
+  color:white;
+}
+
+.topHeader{
+  font-size: 1.75em;
 }
 
 .mainMap {
@@ -176,7 +185,6 @@ footer {
   margin: 5px;
 }
 @import "bourbon";
-
 
 .wrapper {
 	margin-top: 30px;
@@ -252,8 +260,8 @@ footer {
 
 .btn-primary {
   color: #fff;
-  background-color: green;
-  border-color: none;
+  background-color: #428bca;
+  border-color: #357ebd;
 }
 
 .btn-primary:hover,
@@ -262,8 +270,8 @@ footer {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
   color: #fff;
-  background-color: #004D00;
-  border-color: none;
+  background-color: #3276b1;
+  border-color: #285e8e;
 }
 
 /***********************
@@ -292,14 +300,14 @@ footer {
 }
 
 .btn-primary {
-    background-color: green;
+    background: #0099cc;
     color: #ffffff;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .dropdown-toggle.btn-primary {
-    background: #004D00;
+    background: #33a6cc;
 }
 .btn-primary:active, .btn-primary.active {
-    background: #004D00;
+    background: #007299;
     box-shadow: none;
 }
 
@@ -314,4 +322,20 @@ footer {
 
 .whiteBurger{
   color:white;
+}
+
+.bigicon {
+    font-size: 50px;
+    padding-top: 22px;
+}
+
+.col-md-3 {
+    width: 20%;
+}
+
+.vertical-line{
+  width: 2px;
+  background-color: white;
+  height: 100%;
+  float: left;
 }

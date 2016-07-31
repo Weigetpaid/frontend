@@ -1,132 +1,144 @@
 <!DOCTYPE html>
 <html>
-
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Crikey!</title>
-    <link rel="icon" href="Carl.ico" type="image/x-icon">
+      <link rel="icon" href="Carl.ico" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/1af0c15e61.js"></script>
-</head>
-
+  </head>
 <body>
-    <nav class="sidebar">
-        <ul>
-            <li class="active"><a>Help Me</a></li>
-            <li><a href="changedetails.html">Change Details</a></li>
-            <li><a href="heatmap.html">Map</a></li>
-            <li><a href="myrequests.html">My Requests</a></li>
-            <li><a href="onlineresources.html">Online Resources</a></li>
-        </ul>
-    </nav>
-    <span id="burgerMenu" class="glyphicon glyphicon-menu-hamburger burger blackBurger" aria-hidden="true"></span>
+  <nav class="sidebar">
+    <ul>
+      <li class="active"><a>Help Me</a></li>
+      <li><a href="changedetails.html">Change Details</a></li>
+      <li><a href="heatmap.html">Map</a></li>
+      <li><a href="myrequests.html">My Requests</a></li>
+      <li><a href="onlineresources.html">Online Resources</a></li>
+    </ul>
+  </nav>
+  <span id="burgerMenu" class="glyphicon glyphicon-menu-hamburger burger blackBurger" aria-hidden="true"></span>
 
-    <div class="container" id="helpForm">
-        <form>
-            <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
-                <!--Step one of multi step form -->
-                <div class="form-step-one">
-                    <br>
-                    <br>
-                    <h1> Need Help?</h1>
-                    <h2>Enter Details</h2>
-                    <br>
-                    <div class="form-group">
-                        <input type="name" class="form-control" id="nameInput" placeholder="Name">
-                    </div>
-                    <div class="form-group">
-                        <input type="phone" class="form-control" id="phoneInput" placeholder="Phone">
-                    </div>
-                    <br>
-                    <p>We understand that privacy is important. That's why your number will not be seen by anyone by you.</p>
-                    <br>
-                    <button type="submit" class="btn btn-default firstStep">Next</button>
-                </div>
+  <div class="container" id="helpForm">
+    <form>
+      <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
+      <!--Step one of multi step form -->
+      <div class="form-step-one">
+        <br><br>
+        <h1>Need Help?</h1>
+        <h2>Enter Details</h2>
+        <br>
+        <div class="form-group">
+          <input type="name" class="form-control" id="nameInput" placeholder="Name">
+        </div>
+        <div class="form-group">
+          <input type="phone" class="form-control" id="phoneInput" placeholder="Phone">
+        </div>
+        <br>
+        <p>We understand that privacy is important. That's why your number will not be seen by anyone by you.</p>
+        <br>
+        <button type="button" class="btn btn-default firstStep">Next</button>
+      </div>
 
-                <!--Step two -->
-                <div class="form-step-two" style="display:none">
-                    <h2>What do you need help with?</h2>
-                    <hr>
-                    <br>
+      <!--Step two -->
+      <div class="form-step-two" style="display:none">
 
-                    <button type="submit" class="btn btn-primary btn-lg btn-block raised secondStep">
-                        <div class="row">
-                            <span class="glyphicon glyphicon-search"></span>
-                            <h3>Accommodation<h3>
-          <h6>Need for a place to stay and cooked meals for those left stranded during emergencies  </h6>
-          </div>
-        </button>
+        <h2>What do you need help with?</h2>
+        <hr>
+        <br>
+        <button type="button" value="Accommodation" onclick="checkButtonValue(this.value)" class="btn btn-primary btn-lg btn-block raised secondStep">
+          <div class="row">
+            <div class="col-md-3">
+              <span class="glyphicon glyphicon-search bigicon"></span>
+              </div>
+              <div class="vertical-line" />
+              <div class="col-md-9">
+              <h3>Accommodation<h3>
+  <h6>Need for a place to stay and cooked meals during emergencies  </h6>
+  </div>
+  </div>
+  </button>
         <br>
 
-
-
         <button type="submit" class="btn btn-primary btn-lg btn-block raised secondStep">
+          <div class="row">
+            <div class="col-md-3">
+              <span class="glyphicon glyphicon-search bigicon"></span>
+              </div>
+              <div class="vertical-line" />
+              <div class="col-md-9">
           <h3>Transportation<h3>
-          <h6>Lacking transport to get to and from places or in need of a vehicle to transport supplies</h6>
+          <h6>Lacking transport or in need of a vehicle to transport supplies</h6>
+        </div>
+        </div>
         </button>
         <br>
 
-
         <button type="submit" class="btn btn-primary btn-lg btn-block raised secondStep">
+          <div class="row">
+            <div class="col-md-3">
+              <span class="glyphicon glyphicon-search bigicon"></span>
+              </div>
+              <div class="vertical-line" />
+              <div class="col-md-9">
+
           <h3>Services<h3>
           <h6>Services range from extra hands or certain utilities such as water, etc. </h6>
+        </div>
+        </div>
         </button>
         <br>
 
-
         <button type="submit" class="btn btn-primary btn-lg btn-block raised secondStep">
+          <div class="row">
+            <div class="col-md-3">
+              <span class="glyphicon glyphicon-search"></span>
+              </div>
+              <div class="vertical-line" />
+              <div class="col-md-9">
+
           <h3>Other<h3>
           <h6> Need something more specific to your needs? </h6>
+        </div>
+        </div>
         </button>
         <br>
       </div>
 
       <!--Step three -->
       <div class="form-step-three" style="display:none">
-        <h2>*Selected Button*</h2>
+        <h2 id="selectedButton">*Selected Button*</h2>
         <p>Please give some more details about your requirements.</p>
-        <textarea class="form-control" rows="3" placeholder="E.g. I need help transporting sandbags from town hall to my house"></textarea>
+        <textarea id="descriptionInput" class="form-control" rows="3" placeholder="E.g. I need help transporting sandbags from town hall to my house"></textarea>
         <br>
         <p>How many people will you need?</p>
-        <select class="form-control">
+        <select id="peopleInput" class="form-control">
           <option>1</option>
           <option>2</option>
           <option>3</option>
-          <option>4+</option>
+          <option>4 or more</option>
         </select>
         <br>
 
         <p>Estimated time needed?</p>
-        <select class="form-control">
-          <option>&lt;10 minutes</option>
-          <option>10-30 minutes</option>
-          <option>30-60 minutes</option>
-          <option>60+ minutes</option>
+        <select id="timeInput" class="form-control">
+          <option>10 minutes</option>
+          <option>30 minutes</option>
+          <option>1 hour</option>
+          <option>2 hours or more</option>
         </select>
         <br>
-        <button type="submit" class="btn btn-default thirdStep">Submit</button>
+        <button type="button" onclick="submitHelpRequest()" class="btn btn-default thirdStep">Submit</button>
       </div>
 </div>
     </form>
   </div>
   <script src="js/nav.js"></script>
-  <script>
-    $(".firstStep").click(function (event) {
-      $(".form-step-one").hide();
-      $(".form-step-two").show();
-      event.preventDefault();
-    });
-
-    $(".secondStep").click(function (event) {
-      $(".form-step-two").hide();
-      $(".form-step-three").show();
-      event.preventDefault();
-    });
-
-  </script>
+  <script src="js/helpform.js"></script>
+  <script src="js/servercon.js"></script>
 </body>
 <html>
