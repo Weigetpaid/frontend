@@ -34,9 +34,9 @@
     <span id="workIcon" data-toggle="modal" data-target=#myModal><img src="acceptedtask.png"></img></span>
     <nav class="sidebar right">
       <ul>
-        <li><div class="myLabel">Predicted Floods</div><div id="togFlood"><input type="checkbox" class="fancy"></div></li>
-        <li><div class="myLabel">SES Locations</div><input id="togSES" type="checkbox" class="fancy"></li>
-        <li><div class="myLabel">Road closures</div><input id="togRoad" type="checkbox" class="fancy"></li>
+        <li><div class="myLabel">Predicted Floods</div><div id="togFlood"><input type="checkbox" class="fancy" checked></div></li>
+        <li><div class="myLabel">SES Locations</div><input id="togSES" type="checkbox" class="fancy" checked></li>
+        <li><div class="myLabel">Road closures</div><input id="togRoad" type="checkbox" class="fancy" checked></li>
     </nav>
     <i class="fa fa-filter burger blackBurger right"></i>
     <div id="map"></div>
@@ -184,6 +184,8 @@
 				trafficmarkers[i].setVisible(state);
 			}
         });
+        
+        toggleFlood();
 
 
 
@@ -306,7 +308,7 @@
 					position: location,
 		  			map: map,
 			        icon: sesicon,
-			        visible: false
+			        visible: true
 				});
 				sesmarkers.push(marker);
 			}
@@ -321,7 +323,7 @@
 					position: location,
 		  			map: map,
 			        icon: trafficicon,
-			        visible: false
+			        visible: true
 				});
 				trafficmarkers.push(marker);
 			}
