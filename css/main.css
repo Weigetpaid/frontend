@@ -24,6 +24,11 @@ body {
   font-size: 14px;
 }
 
+.helpout-step-two span label,
+.helpout-step-two span p {
+  display: inline-block;
+}
+
 #map {
   height: 95%;
 }
