@@ -17,6 +17,11 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 40px;
 }
+.subheading{
+  font-family: 'Gentium Book Basic', serif;
+  font-weight: lighter;
+  font-size: 14px;
+}
 
 #map {
   height: 95%;
@@ -104,6 +109,7 @@ body {
   color:#333;
 }
 
+
 .burger.right {
   left:inherit;
   right:20px;
@@ -111,6 +117,16 @@ body {
 
 .myLabel {
   color:white;
+}
+
+.add {
+  position:fixed !important;
+  z-index:2;
+  font-size: 2.5em;
+  right: 20px;
+  top: 20px !important;
+  color:#333;
+
 }
 
 .sidebar {
@@ -192,7 +208,7 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height:45px;
+  height:60px;
   background-color: #333;
 }
 
@@ -339,18 +355,16 @@ footer {
   color:white;
 }
 
+.secondStep h3{
+ margin-top:0px;
+
+}
+
 .bigicon {
-    font-size: 50px;
-    padding-top: 22px;
+    font-size: 25px;
+    padding-top: 5px;
 }
 
 .col-md-3 {
     width: 20%;
-}
-
-.vertical-line{
-  width: 2px;
-  background-color: white;
-  height: 100%;
-  float: left;
 }

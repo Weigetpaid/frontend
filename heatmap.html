@@ -15,13 +15,13 @@
     <script src="js/servercon.js"></script>
 
     <script type="text/javascript" src="js/seslocations.js"></script>
+    <script type="text/javascript" src="js/131940.js"></script>
   </head>
 
   <body>
     <nav class="sidebar left">
       <ul>
         <li><a href="needhelp.html">Help Me</a></li>
-        <li><a href="changedetails.html">Change Details</a></li>
         <li class="active"><a>Map</a></li>
         <li><a href="myrequests.html">My Requests</a></li>
         <li><a href="onlineresources.html">Online Resources</a></li>
@@ -62,13 +62,10 @@
         <h4 class="modal-title" id="MarkerTitle"></h4>
       </div>
       <div class="modal-body">
-          <p id="MarkerState">
-          </p>
-          <p id="MarkerDescription">
-          </p>
-          <div class="marker-inline"><img src=""></img><p id="MarkerParticipants"></p></div>
-          <div class="marker-inline"><img src=""></img><p id="MarkerTime"></p></div>
-
+        <label>Task state</label><p id="MarkerState"></p>
+        <label>Task Description</label><p id="MarkerDescription"></p>
+        <div class="marker-inline"><img src="People.png"></img><label>Number of people required:</label><p id="MarkerParticipants"></p></div>
+        <div class="marker-inline"><img src="timestimate.png"></img><label>Estimated time required:</label><p id="MarkerTime"></p></div>
 
       </div>
       <div class="modal-footer">
@@ -131,21 +128,18 @@
 
 
 
-      /*  google.maps.event.addDomListener($('#togFlood').on('switchChange.bootstrapSwitch', function(event, state) {
-            console.log("fekkers");
-            toggleFlood();
-          });
-        );*/
         $('#togFlood').on('switchChange.bootstrapSwitch', function(event, state) {
           toggleFlood();
         });
-      $('#togHeat').on('switchChange.bootstrapSwitch', function(event, state) {
+        $('#togHeat').on('switchChange.bootstrapSwitch', function(event, state) {
         toggleHeatmap();
-      });
-      //  getRequests();
+        });
 
-          //drawBlips();
 
+
+          drawBlips();
+
+          drawIcons();
 
       }
 
@@ -185,30 +179,35 @@
         heatmap.set('opacity', heatmap.get('opacity') ? null : 0.2);
       }
 
+
 	  function getBlips() {
         return [
-          {position: new google.maps.LatLng(-27.4698, 153.0251), type: 'pepe'},
-          {position:new google.maps.LatLng(-27.4698, 153.0351), type: 'datboi'},
-          {position:new google.maps.LatLng(-27.4688, 153.0271), type: 'pepe'},
-          {position:new google.maps.LatLng(-27.2678, 153.0251), type: 'datboi'},
+          {position: new google.maps.LatLng(-27.4698, 153.0251), type: 'accomodation'},
+          {position:new google.maps.LatLng(-27.4698, 153.0351), type: 'transport'},
+          {position:new google.maps.LatLng(-27.2678, 153.0251), type: 'service'},
+		  {position:new google.maps.LatLng(-27.2878, 153.0271), type: 'other'}
 		  ];
 	  }
 
 	  function drawBlips() {
 
-		var icons = {pepe: {icon: 'pepe.png'}, datboi: {icon: 'boi.png'}};
+		var icons = {Accommodation: {icon: 'accomodation.png'},
+					Transportation: {icon: 'transport.png'},
+					Services: {icon: 'Service.png'},
+					Other: {icon: 'others.png'}};
 
-	getResults(function(feature){
-    for (var i = 0, feature; feature = features[i];i++){
+	getRequests(function(features){
+    for (var i = 0, features; feature = features[i];i++){
+      console.log(icons[feature.category].icon);
       var marker = new google.maps.Marker({
-      position: feature.position,
-      icon: icons[feature.type].icon,
+      position: {lat: feature.lat, lng:feature.lng},
+      icon: icons[feature.category].icon,
         map: map,
-        type: feature.type,
-        state:"in progress",
-        description: "Forever alone",
-        numParticipants: "3",
-        time: "30mins"
+        type: feature.category,
+        state:"In Progress",
+        description: feature.descr,
+        numParticipants: feature.numpeople,
+        time: feature.timeestimate
       });
 
       google.maps.event.addListener(marker, 'click', function() {
@@ -226,6 +225,48 @@
 
 
 	  }
+
+	  function drawIcons() {
+		var sesicon = {
+			url: "ses.png", // url
+			scaledSize: new google.maps.Size(25, 25), // scaled size
+			origin: new google.maps.Point(0,0), // origin
+			anchor: new google.maps.Point(0, 0) // anchor
+		};
+
+		var trafficicon = {
+			url: "vlc.png", // url
+			scaledSize: new google.maps.Size(25, 25), // scaled size
+			origin: new google.maps.Point(0,0), // origin
+			anchor: new google.maps.Point(0, 0) // anchor
+		};
+
+		seslocations_getdata(function(locations) {
+			for (var i = 0; i < locations['geometries'].length; i++){
+				var location = {lat: locations['geometries'][i]['coordinates'][1], lng: locations['geometries'][i]['coordinates'][0]};
+				var marker = new google.maps.Marker({
+					position: location,
+		  			map: map,
+			        icon: sesicon,
+				});
+			}
+		});
+
+		getdata_131940(function(locations) {
+			console.log("Traffic data");
+			console.log(locations['features']);
+			for (var i = 0; i < locations['features'].length; i++) {
+				var location = {lat: locations['features'][i]['geometry']['geometries'][0]['coordinates'][1], lng: locations['features'][i]['geometry']['geometries'][0]['coordinates'][0]};
+				var marker = new google.maps.Marker({
+					position: location,
+		  			map: map,
+			        icon: trafficicon,
+				});
+			}
+		});
+	}
+
+
     </script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKKrj7vW-dxHA_g4VmpDUqSbCp_d0OQvk&libraries=visualization&callback=initMap">

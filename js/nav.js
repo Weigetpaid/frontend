@@ -27,16 +27,21 @@ $( document ).ready(function() {
 
 
 
-    $(".burger.left").on('click',function(e) {
+
+
+    $(".burger").on('click',function(e) {
+
   e.stopPropagation();
 });
 
     $(document).click(function() {
       console.log($(".sidebar").hasClass('on'));
       if($(".sidebar").hasClass('on')) {
+
         $(".burger").addClass('blackBurger');
         $(".burger").removeClass('whiteBurger');
         $('.sidebar').removeClass("on");
+
       }
     });
 });
