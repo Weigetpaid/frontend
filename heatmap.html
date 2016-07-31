@@ -234,29 +234,23 @@
 	  }
 	  
 	  function drawIcons() {
+		var sesicon = {
+			url: "ses.png", // url
+			scaledSize: new google.maps.Size(25, 25), // scaled size
+			origin: new google.maps.Point(0,0), // origin
+			anchor: new google.maps.Point(0, 0) // anchor
+		};
 
-		var icons = {pepe: {icon: 'pepe.png'}, datboi: {icon: 'boi.png'}};
+/* 		var icons = {ses: {icon: 'ses.png'}, datboi: {icon: 'boi.png'}}; */
 		
 		seslocations_getdata(function(locations) {
 			for (var i = 0; i < locations['geometries'].length; i++){
-				var location = {lat: locations['geometries'][i]['coordinates'][0], lng: locations['geometries'][i]['coordinates'][1]};
+				var location = {lat: locations['geometries'][i]['coordinates'][1], lng: locations['geometries'][i]['coordinates'][0]};
 				var marker = new google.maps.Marker({
 					position: location,
 		  			map: map,
-			        title: "FUCK"
+			        icon: sesicon,
 				});
-/*
-		
-				google.maps.event.addListener(marker, 'click', function() {
-			        console.log(this.type);
-			        $('#markerModal').modal('show')
-			        $("#MarkerTitle").text(this.type);
-			        $("#MarkerState").text(this.state);
-			        $("#MarkerDescription").text(this.description);
-			        $("#MarkerParticipants").text(this.numParticipants);
-			        $("#MarkerTime").text(this.time);
-				});
-*/
 			}
 		});
 	}
