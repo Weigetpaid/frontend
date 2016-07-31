@@ -28,7 +28,10 @@
       </ul>
     </nav>
     <span id="burgerMenu" class="glyphicon glyphicon-menu-hamburger burger blackBurger left" aria-hidden="true"></span>
+    <!-- Button trigger modal -->
 
+
+    <span id="workIcon" data-toggle="modal" data-target=#myModal><img src="acceptedtask.png"></img></span>
     <nav class="sidebar right">
       <ul>
         <li><div class="myLabel">Predicted Floods</div><div id="togFlood"><input type="checkbox" class="fancy"></div></li>
@@ -54,7 +57,28 @@
       </div>
     </footer>
     <!-- Filters Modal -->
+    <div class="modal fade" id="helpOutModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="MarkerTitle"></h4>
+          </div>
+          <div class="modal-body">
+            <label>Title</label><p id="helpTitle"></p>
+            <label>Description</label><p id="helpDescription"></p>
+            <label>Phone</label><p id="helpPhone"></p>
+            <label>Name</label><p id="helpName"></p>
 
+          </div>
+          <div class="modal-footer">
+            <a type="button" onclick="removeActive()"  class="btn btn-primary">Done Helping!!</a>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 <div class="modal fade" id="markerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -76,9 +100,11 @@
     </div>
   </div>
 </div>
+</div>
 <script src="js/bootstrap-switch.min.js"></script>
 <script src="js/nav.js"></script>
 <script src="js/mapNav.js"></script>
+<script src="js/currTask.js"></script>
     <script >
     var sesmarkers = [];
 		var trafficmarkers = [];
@@ -125,7 +151,7 @@
             templateId: 3
           }
         });
-        
+
         var array =[
           new google.maps.LatLng(-27.4698, 153.0251)
 
@@ -147,7 +173,7 @@
         	toggleHeatmap();
         	sesLayer.setMap(sesLayer.getMap() ? null : map);
         });
-        
+
         $('#togSES').on('switchChange.bootstrapSwitch', function(event, state) {
 			for(var i = 0; i < sesmarkers.length; i++) {
 				sesmarkers[i].setVisible(state);
@@ -240,7 +266,7 @@
       google.maps.event.addListener(marker, 'click', function() {
         console.log(this.type);
         console.log(this);
-        $('#markerModal').modal('show')
+        $('#markerModal').modal('show');
         $("#MarkerTitle").text(this.type);
         $("#MarkerState").text(this.state);
         $("#MarkerDescription").text(this.description);
@@ -272,7 +298,7 @@
 			origin: new google.maps.Point(0,0), // origin
 			anchor: new google.maps.Point(0, 0) // anchor
 		};
-		
+
 		seslocations_getdata(function(locations) {
 			for (var i = 0; i < locations['geometries'].length; i++){
 				var location = {lat: locations['geometries'][i]['coordinates'][1], lng: locations['geometries'][i]['coordinates'][0]};
@@ -286,7 +312,7 @@
 			}
 		});
 
-		
+
 		getdata_131940(function(locations) {
 			console.log(locations['features']);
 			for (var i = 0; i < locations['features'].length; i++) {

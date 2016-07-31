@@ -34,7 +34,8 @@ function getRequests(callback) {
 /**
 	Yet to be tested
 */
-function getRequestsForUser(phonenumber) {
+function getRequestsForUser(phonenumber, callback) {
+	console.log(phonenumber);
 	$.ajax({
 	    url: "http://weigetpaid.timhadwen.com/api/request/" + phonenumber,
 	    type: "GET",
@@ -42,8 +43,7 @@ function getRequestsForUser(phonenumber) {
 	    success: function(resultData) {
 	        //here is your json.
 	          // process it
-	          console.log(resultData);
-	          return resultData;
+	          callback(resultData);
 	    },
 	    error : function(jqXHR, textStatus, errorThrown) {
 	    },
