@@ -51,3 +51,21 @@ function getRequestsForUser(phonenumber) {
 	    timeout: 120000,
 	});
 }
+
+function addOneHelper(id) {
+	$.ajax({
+	    url: "http://weigetpaid.timhadwen.com/api/helper/" + id,
+	    type: "GET",
+	    contentType: 'application/json; charset=utf-8',
+	    success: function(resultData) {
+	        //here is your json.
+	          // process it
+	          console.log(resultData);
+	          return resultData;
+	    },
+	    error : function(jqXHR, textStatus, errorThrown) {
+	    },
+
+	    timeout: 120000,
+	});
+}
