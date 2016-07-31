@@ -7,12 +7,7 @@ function getdata_131940(callback) {
 	$.ajax({
 	    url: "http://weigetpaid.timhadwen.com/datasets/traffic.json",
 	    success: function (data) {
-	        console.log(data);
 	        callback(data);
 	    }
 	});
 }
-
-getdata_131940(function(resultData) {
-	
-});
