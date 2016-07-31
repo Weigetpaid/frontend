@@ -46,9 +46,10 @@
           </button>
         </div>
         <div class="pull-right footer-nav">
-          <button type="button" class="btn btn-primary btn-md right" data-toggle="modal" data-target="#filterModal">
-            <i class="fa fa-filter"></i>
-          </button>
+          <a type="button" class="btn btn-primary btn-md right" href="./needhelp.html">
+            <span class="glyphicon glyphicon-hand-up helpMeGlyph" aria-hidden="true"></span>
+
+          </a>
         </div>
       </div>
     </footer>
@@ -66,7 +67,7 @@
         <label>Task Description</label><p id="MarkerDescription"></p>
         <div class="marker-inline"><img src="People.png"></img><label>Number of people required:</label><p id="MarkerParticipants"></p></div>
         <div class="marker-inline"><img src="timestimate.png"></img><label>Estimated time required:</label><p id="MarkerTime"></p></div>
-        <div style="display:none"><p id="phonenumber"></p>
+        <div style="display:none"><p id="phonenumber"></p><p id="name"></p>
       </div>
       <div class="modal-footer">
         <a type="button" onclick="saveMarkerData()" href="helpout.html" class="btn btn-primary">Help Out!</a>
@@ -91,6 +92,7 @@
           $data.description = $("#MarkerDescription").html();
           $data.phonenumber = $("#phonenumber").html();
           $data.active = false;
+          $data.name = $("#name").html();
           sessionStorage.setItem("data", JSON.stringify($data));
 
       }
@@ -98,7 +100,7 @@
       $("*").click(function(){
         console.log(this);
       });
-      
+
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           zoom: 13,
@@ -229,6 +231,9 @@
         $("#MarkerDescription").text(this.description);
         $("#MarkerParticipants").text(this.numParticipants);
         $("#MarkerTime").text(this.time);
+        $("#phonenumber").text(this.phone);
+        console.log(this.name);
+        $("#name").text(this.name);
         });
       }
 

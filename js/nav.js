@@ -4,7 +4,9 @@ if (sessionStorage.getItem("lastLat") === null
 }
 
 $( document ).ready(function() {
+  console.log("wow");
     $(".burger.left").click(function() {
+      console.log("why");
       $(".sidebar.right").removeClass("on");
       $(".burger.right").addClass('blackBurger');
       $(".burger.right").removeClass('whiteBurger');
@@ -29,7 +31,7 @@ $( document ).ready(function() {
 
 
 
-    $(".burger").on('click',function(e) {
+    $(".burger.left").on('click',function(e) {
 
   e.stopPropagation();
 });
