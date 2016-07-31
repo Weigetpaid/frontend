@@ -12,5 +12,11 @@ if (data.active == true) {
   $('#workIcon').click(function(){
     $('#helpOutModel').modal('show');
   });
+}
 
+function removeActive() {
+  data.active = false;
+  sessionStorage.setItem('data', JSON.stringify(data));
+  $('#workIcon').removeClass('activeNow');
+  $('#helpOutModel').modal('hide');
 }
