@@ -22,8 +22,6 @@ $( document ).ready(function() {
       }
     });
 
-
-
     $(".burger").on('click',function(e) {
   e.stopPropagation();
 });
@@ -31,7 +29,11 @@ $( document ).ready(function() {
     $(document).click(function() {
       console.log($(".sidebar").hasClass('on'));
       if($(".sidebar").hasClass('on')) {
-        $('.sidebar').removeClass("on");      
+        $('.sidebar').removeClass("on");   
+        $("#burgerMenu").addClass('blackBurger');
+        $("#burgerMenu").removeClass("whiteBurger");   
       }
     });
 });
+
+

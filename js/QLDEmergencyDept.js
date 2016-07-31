@@ -17,6 +17,6 @@ function getdata_131940(callback) {
 	});
 }
 
-getdata_131940(function() {
+getdata_131940(function(result) {
 	
 });
