@@ -32,9 +32,8 @@
     <nav class="sidebar right">
       <ul>
         <li><div class="myLabel">Predicted Floods</div><div id="togFlood"><input type="checkbox" class="fancy"></div></li>
-        <li><div class="myLabel">Heat Map</div><div id="togHeat"><input type="checkbox" class="fancy"></div></li>
-        <li><div class="myLabel">no data yet</div><input type="checkbox" class="fancy" checked></li>
-        <li><div class="myLabel">no data yet</div><input type="checkbox" class="fancy" checked></li>
+        <li><div class="myLabel">SES Locations</div><input id="togSES" type="checkbox" class="fancy"></li>
+        <li><div class="myLabel">Road closures</div><input id="togRoad" type="checkbox" class="fancy"></li>
     </nav>
     <i class="fa fa-filter burger blackBurger right"></i>
     <div id="map"></div>
@@ -81,6 +80,8 @@
 <script src="js/nav.js"></script>
 <script src="js/mapNav.js"></script>
     <script >
+    var sesmarkers = [];
+		var trafficmarkers = [];
     $(".fancy").bootstrapSwitch();
       // This example requires the Visualization library. Include the libraries=visualization
       // parameter when you first load the API. For example:
@@ -124,16 +125,12 @@
             templateId: 3
           }
         });
+        
         var array =[
           new google.maps.LatLng(-27.4698, 153.0251)
 
         ];
         var pointArray = new google.maps.MVCArray(array);
-
-        heatmap = new google.maps.visualization.HeatmapLayer({
-          data:pointArray
-          //map: map
-        });
 
 
         google.maps.event.addDomListener(document.getElementById('getLastLocal'), 'click', function () {
@@ -147,7 +144,19 @@
           toggleFlood();
         });
         $('#togHeat').on('switchChange.bootstrapSwitch', function(event, state) {
-        toggleHeatmap();
+        	toggleHeatmap();
+        	sesLayer.setMap(sesLayer.getMap() ? null : map);
+        });
+        
+        $('#togSES').on('switchChange.bootstrapSwitch', function(event, state) {
+			for(var i = 0; i < sesmarkers.length; i++) {
+				sesmarkers[i].setVisible(state);
+			}
+        });
+        $('#togRoad').on('switchChange.bootstrapSwitch', function(event, state) {
+			for(var i = 0; i < trafficmarkers.length; i++) {
+				trafficmarkers[i].setVisible(state);
+			}
         });
 
 
@@ -219,7 +228,7 @@
       icon: icons[feature.category].icon,
         map: map,
         type: feature.category,
-        state:"In Progress",
+        state: "In Progress",
         description: feature.descr,
         numParticipants: feature.numpeople,
         time: feature.timeestimate,
@@ -263,7 +272,7 @@
 			origin: new google.maps.Point(0,0), // origin
 			anchor: new google.maps.Point(0, 0) // anchor
 		};
-
+		
 		seslocations_getdata(function(locations) {
 			for (var i = 0; i < locations['geometries'].length; i++){
 				var location = {lat: locations['geometries'][i]['coordinates'][1], lng: locations['geometries'][i]['coordinates'][0]};
@@ -271,10 +280,13 @@
 					position: location,
 		  			map: map,
 			        icon: sesicon,
+			        visible: false
 				});
+				sesmarkers.push(marker);
 			}
 		});
 
+		
 		getdata_131940(function(locations) {
 			console.log(locations['features']);
 			for (var i = 0; i < locations['features'].length; i++) {
@@ -283,7 +295,9 @@
 					position: location,
 		  			map: map,
 			        icon: trafficicon,
+			        visible: false
 				});
+				trafficmarkers.push(marker);
 			}
 		});
 	}

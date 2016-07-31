@@ -54,5 +54,5 @@ function confirmHelp(){
   var parsedJob = JSON.parse(data);
 
   addOneHelper(parsedJob.id);
-
+  window.location.replace("./heatmap.html");
 }
