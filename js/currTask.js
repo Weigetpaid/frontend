@@ -9,5 +9,8 @@ if (data.active == true) {
   $('#helpPhone').text(data.phonenumber);
   $('#helpName').text(data.name);
   $('#workIcon').addClass('activeNow');
+  $('#workIcon').click(function(){
+    $('#helpOutModel').modal('show');
+  });
 
 }

@@ -149,7 +149,7 @@
             templateId: 3
           }
         });
-        
+
         var array =[
           new google.maps.LatLng(-27.4698, 153.0251)
 
@@ -171,7 +171,7 @@
         	toggleHeatmap();
         	sesLayer.setMap(sesLayer.getMap() ? null : map);
         });
-        
+
         $('#togSES').on('switchChange.bootstrapSwitch', function(event, state) {
 			for(var i = 0; i < sesmarkers.length; i++) {
 				sesmarkers[i].setVisible(state);
@@ -264,7 +264,7 @@
       google.maps.event.addListener(marker, 'click', function() {
         console.log(this.type);
         console.log(this);
-        $('#markerModal').modal('show')
+        $('#markerModal').modal('show');
         $("#MarkerTitle").text(this.type);
         $("#MarkerState").text(this.state);
         $("#MarkerDescription").text(this.description);
@@ -296,7 +296,7 @@
 			origin: new google.maps.Point(0,0), // origin
 			anchor: new google.maps.Point(0, 0) // anchor
 		};
-		
+
 		seslocations_getdata(function(locations) {
 			for (var i = 0; i < locations['geometries'].length; i++){
 				var location = {lat: locations['geometries'][i]['coordinates'][1], lng: locations['geometries'][i]['coordinates'][0]};
@@ -310,7 +310,7 @@
 			}
 		});
 
-		
+
 		getdata_131940(function(locations) {
 			console.log(locations['features']);
 			for (var i = 0; i < locations['features'].length; i++) {
