@@ -196,15 +196,15 @@
 	  }
 
 	  function drawBlips() {
-		
-		var icons = {accomodation: {icon: 'accomodationz.png'}, 
+
+		var icons = {accomodation: {icon: 'accomodationz.png'},
 					transport: {icon: 'transport.png'},
 					service: {icon: 'Service.png'},
 					other: {icon: 'other.png'}};
 
 	getRequests(function(features){
     for (var i = 0, features; feature = features[i];i++){
-      console.log(feature);
+      console.log(icons[feature.category].icon);
       var marker = new google.maps.Marker({
       position: feature.position,
       icon: icons[feature.category].icon,
