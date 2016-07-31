@@ -15,6 +15,14 @@ $(".helpFirstStep").click(function (event) {
   var phone = document.getElementById('phoneInput').value;
   document.getElementById('yourName').innerHTML = name;
   document.getElementById('yourPhone').innerHTML = phone;
+
+  var data = sessionStorage.getItem("data");
+  var parsedJob = JSON.parse(data);
+  document.getElementById('jobName').innerHTML = parsedJob.name;
+  document.getElementById('jobPhone').innerHTML = parsedJob.phonenumber;
+  document.getElementById('jobType').innerHTML = parsedJob.title;
+  document.getElementById('jobDescription').innerHTML = parsedJob.description;
+
   $(".helpout-step-one").hide();
   $(".helpout-step-two").show();
   event.preventDefault();
