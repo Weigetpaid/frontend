@@ -18,14 +18,15 @@
   <link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400italic,700' rel='stylesheet' type='text/css'>
 
   <body>
-  <nav class="sidebar">
-    <ul>
-      <li><a href="needhelp.html">Help Me</a></li>
-      <li><a href="heatmap.html">Map</a></li>
-      <li><a href="myrequests.html">My Requests</a></li>
-      <li class="active"><a>Online Resources</a></li>
-    </ul>
-  </nav>
+    <nav class="sidebar left">
+      <ul>
+        <li><a href="needhelp.html">Help Me</a></li>
+        <li class="active"><a>Map</a></li>
+        <li><a href="myrequests.html">My Requests</a></li>
+        <li><a href="onlineresources.html">Online Resources</a></li>
+      </ul>
+    </nav>
+    <span id="burgerMenu" class="glyphicon glyphicon-menu-hamburger burger blackBurger left" aria-hidden="true"></span>
 
 <!-- Theoretically will change based on which state user is selected, we assume they are in QLD
       yet to be styled, probably do some crazy shit with images and stuff-->
@@ -129,5 +130,6 @@
 
         </div>
   <script src="js/nav.js"></script>
+  <script src="js/mapNav.js"></script>
 </body>
 <html>
