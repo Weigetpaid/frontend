@@ -379,3 +379,14 @@ footer {
  .nooverflow {
    overflow: auto;
  }
+
+#workIcon {
+  position: fixed;
+  right: 60px;
+  z-index: 3;
+  display:none;
+}
+
+#workIcon.activeNow {
+  display:block;
+}

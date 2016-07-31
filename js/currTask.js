@@ -4,5 +4,10 @@ var data = JSON.parse(sessionStorage.getItem('data'));
 
 if (data.active == true) {
   //$('#workModal ')
-  $('#workIcon').addClass('on');
+  $('#helpTitle').text(data.title);
+  $('#helpDescription').text(data.description);
+  $('#helpPhone').text(data.phonenumber);
+  $('#helpName').text(data.name);
+  $('#workIcon').addClass('activeNow');
+
 }
