@@ -225,6 +225,7 @@
 
       google.maps.event.addListener(marker, 'click', function() {
         console.log(this.type);
+        console.log(this);
         $('#markerModal').modal('show')
         $("#MarkerTitle").text(this.type);
         $("#MarkerState").text(this.state);
