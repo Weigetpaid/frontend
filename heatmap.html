@@ -143,9 +143,11 @@
       google.maps.event.addDomListener(document.getElementById('togHeat'), 'change', function () {
         toggleHeatmap();
     });
-      //  getRequests();
+/*       	  getRequests(); */
 
-          //drawBlips();
+          drawBlips();
+          
+          drawIcons();
 
 
       }
@@ -230,6 +232,36 @@
 
 
 	  }
+	  
+	  function drawIcons() {
+
+		var icons = {pepe: {icon: 'pepe.png'}, datboi: {icon: 'boi.png'}};
+		
+		seslocations_getdata(function(locations) {
+			for (var i = 0; i < locations['geometries'].length; i++){
+				var location = {lat: locations['geometries'][i]['coordinates'][0], lng: locations['geometries'][i]['coordinates'][1]};
+				var marker = new google.maps.Marker({
+					position: location,
+		  			map: map,
+			        title: "FUCK"
+				});
+/*
+		
+				google.maps.event.addListener(marker, 'click', function() {
+			        console.log(this.type);
+			        $('#markerModal').modal('show')
+			        $("#MarkerTitle").text(this.type);
+			        $("#MarkerState").text(this.state);
+			        $("#MarkerDescription").text(this.description);
+			        $("#MarkerParticipants").text(this.numParticipants);
+			        $("#MarkerTime").text(this.time);
+				});
+*/
+			}
+		});
+	}
+	  
+	  
     </script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKKrj7vW-dxHA_g4VmpDUqSbCp_d0OQvk&libraries=visualization&callback=initMap">
