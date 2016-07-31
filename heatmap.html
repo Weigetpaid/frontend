@@ -78,10 +78,10 @@
         <h4 class="modal-title" id="MarkerTitle"></h4>
       </div>
       <div class="modal-body">
-        <p>Task state</p><p id="MarkerState"></p>
-        <p>Task Description</p><p id="MarkerDescription"></p>
-        <div class="marker-inline"><img src=""></img><p>Number of people required:</p><p id="MarkerParticipants"></p></div>
-        <div class="marker-inline"><img src=""></img><p>Estimated time required:</p><p id="MarkerTime"></p></div>
+        <label>Task state</label><p id="MarkerState"></p>
+        <label>Task Description</label><p id="MarkerDescription"></p>
+        <div class="marker-inline"><img src="People.png"></img><label>Number of people required:</label><p id="MarkerParticipants"></p></div>
+        <div class="marker-inline"><img src="timestimate.png"></img><label>Estimated time required:</label><p id="MarkerTime"></p></div>
 
       </div>
       <div class="modal-footer">
@@ -238,7 +238,7 @@
 			origin: new google.maps.Point(0,0), // origin
 			anchor: new google.maps.Point(0, 0) // anchor
 		};
-		
+
 		var trafficicon = {
 			url: "vlc.png", // url
 			scaledSize: new google.maps.Size(25, 25), // scaled size
@@ -256,7 +256,7 @@
 				});
 			}
 		});
-		
+
 		getdata_131940(function(locations) {
 			console.log("Traffic data");
 			console.log(locations['features']);
