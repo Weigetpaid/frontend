@@ -66,10 +66,10 @@
         <label>Task Description</label><p id="MarkerDescription"></p>
         <div class="marker-inline"><img src="People.png"></img><label>Number of people required:</label><p id="MarkerParticipants"></p></div>
         <div class="marker-inline"><img src="timestimate.png"></img><label>Estimated time required:</label><p id="MarkerTime"></p></div>
-
+        <div style="display:none"><p id="phonenumber"></p>
       </div>
       <div class="modal-footer">
-        <a type="button" href="helpout.html" class="btn btn-primary">Help Out!</a>
+        <a type="button" onclick="saveMarkerData()" href="helpout.html" class="btn btn-primary">Help Out!</a>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
@@ -85,7 +85,15 @@
       // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=visualization">
 
       var map, heatmap, floodData;
+      function saveMarkerData(){
+          $data = {};
+          $data.title = $("#MarkerTitle").text;
+          $data.description = $("#MarkerDescription").text;
+          $data.phonenumber = $("#phonenumber").text;
+          $data.active = false;
+          sessionStorage.setItem("data", JSON.parse($data));
 
+      }
 
       $("*").click(function(){
         console.log(this);
@@ -96,7 +104,8 @@
           zoom: 13,
           center: {lat: parseFloat(sessionStorage.getItem('lastLat')), lng: parseFloat(sessionStorage.getItem('lastLong'))},
           mapTypeId: 'roadmap',
-          mapTypeControl: false
+          mapTypeControl: false,
+          streetViewControl: false
         });
         floodData = new google.maps.FusionTablesLayer({
           //map: map,
