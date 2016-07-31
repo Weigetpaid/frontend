@@ -11,6 +11,10 @@ $(".secondStep").click(function (event) {
 });
 
 $(".helpFirstStep").click(function (event) {
+  var name = document.getElementById('nameInput').value;
+  var phone = document.getElementById('phoneInput').value;
+  document.getElementById('yourName').innerHTML = name;
+  document.getElementById('yourPhone').innerHTML = phone;
   $(".helpout-step-one").hide();
   $(".helpout-step-two").show();
   event.preventDefault();
