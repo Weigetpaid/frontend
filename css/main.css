@@ -356,6 +356,17 @@ footer {
   padding-top:5%;
 }
 
+.infoPanel .panel{
+  border:1px solid #333;
+}
+
+.infoPanel .panel-content{
+  font-size:0.85em;
+  padding: 10px;
+  text-align: left;
+}
+
+
 .blackBurger{
   color:black;
 }
@@ -385,12 +396,14 @@ footer {
    overflow: auto;
  }
 
-.infoPanel .panel{
-	border:1px solid #333;
+#workIcon {
+  position: fixed;
+  right: 60px;
+  z-index: 3;
+  display:none;
 }
 
-.infoPanel .panel-content{
-  font-size:0.85em;
-  padding: 10px;
-  text-align: left;
+#workIcon.activeNow {
+  display:block;
 }
+
