@@ -145,7 +145,7 @@
     });
       //  getRequests();
 
-          //drawBlips();
+          drawBlips();
 
 
       }
@@ -206,7 +206,7 @@
       console.log(feature);
       var marker = new google.maps.Marker({
       position: feature.position,
-      icon: icons["other"].icon,
+      icon: icons[feature.category].icon,
         map: map,
         type: feature.category,
         state:"In Progress",
