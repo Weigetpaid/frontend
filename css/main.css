@@ -376,3 +376,6 @@ footer {
 .helpMeGlyph {
   font-size: 1.2em;
 }
+ .nooverflow {
+   overflow: auto;
+ }
