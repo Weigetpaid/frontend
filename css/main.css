@@ -14,6 +14,10 @@ body {
   overflow: hidden;
 }
 
+.getLocal{
+  cursor:pointer;
+}
+
 .crikey-header{
   font-family: 'Open Sans', sans-serif;
   font-size: 40px;
