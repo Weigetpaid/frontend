@@ -199,8 +199,8 @@
 
 		var icons = {pepe: {icon: 'pepe.png'}, datboi: {icon: 'boi.png'}};
 
-	getRequests(function(feature){
-    for (var i = 0, feature; feature = features[i];i++){
+	getRequests(function(features){
+    for (var i = 0, features; feature = features[i];i++){
       console.log(feature[i]);
       var marker = new google.maps.Marker({
       position: feature.position,
