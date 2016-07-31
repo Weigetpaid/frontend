@@ -143,10 +143,11 @@
       google.maps.event.addDomListener(document.getElementById('togHeat'), 'change', function () {
         toggleHeatmap();
     });
-      //  getRequests();
+/*       	  getRequests(); */
 
-          //drawBlips();
+          drawBlips();
 
+          drawIcons();
 
       }
 
@@ -196,17 +197,18 @@
 	  }
 
 	  function drawBlips() {
-		var iconbase = 'base.png';
-		var icons = {accomodation: {icon: iconbase + 'accomodationz.png'},
-					transport: {icon: iconbase + 'transport.png'},
-					service: {icon: iconbase + 'Service.png'},
-					other: {icon: iconbase + 'other.png'}};
+
+		var icons = {Accommodation: {icon: 'accomodation.png'},
+					Transportation: {icon: 'transport.png'},
+					Services: {icon: 'Service.png'},
+					Other: {icon: 'others.png'}};
+
 	getRequests(function(features){
     for (var i = 0, features; feature = features[i];i++){
-      console.log(feature);
+      console.log(icons[feature.category].icon);
       var marker = new google.maps.Marker({
-      position: feature.position,
-      icon: icons["other"].icon,
+      position: {lat: -(feature.lat), lng:feature.lng},
+      icon: icons[feature.category].icon,
         map: map,
         type: feature.category,
         state:"In Progress",
@@ -230,6 +232,36 @@
 
 
 	  }
+
+	  function drawIcons() {
+
+		var icons = {pepe: {icon: 'pepe.png'}, datboi: {icon: 'boi.png'}};
+
+		seslocations_getdata(function(locations) {
+			for (var i = 0; i < locations['geometries'].length; i++){
+				var location = {lat: locations['geometries'][i]['coordinates'][0], lng: locations['geometries'][i]['coordinates'][1]};
+				var marker = new google.maps.Marker({
+					position: location,
+		  			map: map,
+			        title: "FUCK"
+				});
+/*
+
+				google.maps.event.addListener(marker, 'click', function() {
+			        console.log(this.type);
+			        $('#markerModal').modal('show')
+			        $("#MarkerTitle").text(this.type);
+			        $("#MarkerState").text(this.state);
+			        $("#MarkerDescription").text(this.description);
+			        $("#MarkerParticipants").text(this.numParticipants);
+			        $("#MarkerTime").text(this.time);
+				});
+*/
+			}
+		});
+	}
+
+
     </script>
     <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKKrj7vW-dxHA_g4VmpDUqSbCp_d0OQvk&libraries=visualization&callback=initMap">
