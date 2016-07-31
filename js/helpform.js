@@ -10,6 +10,25 @@ $(".secondStep").click(function (event) {
   event.preventDefault();
 });
 
+$(".helpFirstStep").click(function (event) {
+  var name = document.getElementById('nameInput').value;
+  var phone = document.getElementById('phoneInput').value;
+  document.getElementById('yourName').innerHTML = name;
+  document.getElementById('yourPhone').innerHTML = phone;
+
+  var data = sessionStorage.getItem("data");
+  var parsedJob = JSON.parse(data);
+  document.getElementById('jobName').innerHTML = parsedJob.name;
+  document.getElementById('jobPhone').innerHTML = parsedJob.phonenumber;
+  document.getElementById('jobType').innerHTML = parsedJob.title;
+  document.getElementById('jobDescription').innerHTML = parsedJob.description;
+
+  $(".helpout-step-one").hide();
+  $(".helpout-step-two").show();
+  event.preventDefault();
+});
+
+
 function checkButtonValue(buttonValue) {
   document.getElementById('selectedButton').innerHTML = buttonValue;
 }
@@ -28,4 +47,11 @@ function submitHelpRequest(){
 
   console.log(name, phone, lat, lng, category, desc, people, time)
   newRequest(name, phone, lat, lng, category, desc, people, time);
+}
+
+function confirmHelp(){
+  var data = sessionStorage.getItem("data");
+  var parsedJob = JSON.parse(data);
+
+  addOneHelper(parsedJob.id);
 }

@@ -14,24 +14,25 @@
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400italic,700' rel='stylesheet' type='text/css'>
+    <script src="js/helpform.js"></script>
 </head>
 
 <body>
-  <nav class="left">
-    <ul>
-      <li ><a href="needhelp.html">Help Me</a></li>
-      <li><a href="heatmap.html">Map</a></li>
-      <li><a href="myrequests.html">My Requests</a></li>
-      <li><a href="onlineresources.html">Online Resources</a></li>
-    </ul>
-  </nav>
-  <span id="burgerMenu" class="glyphicon glyphicon-menu-hamburger burger blackBurger left" aria-hidden="true"></span>
+   <nav class="sidebar left">
+      <ul>
+        <li><a href="needhelp.html">Help Me</a></li>
+        <li><a href="heatmap.html">Map</a></li>
+        <li><a href="myrequests.html">My Requests</a></li>
+        <li class="active"><a href="onlineresources.html">Online Resources</a></li>
+      </ul>
+    </nav>
+    <span id="burgerMenu" class="glyphicon glyphicon-menu-hamburger burger blackBurger left" aria-hidden="true"></span>
     <a href="myrequests.html"><span class="glyphicon glyphicon-remove add" aria-hidden="true"></span></a>
     <div class="container" id="helpForm">
         <form>
             <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3">
                 <!--Step one of multi step form -->
-                <div class="form-step-one">
+                <div class="helpout-step-one">
                     <br>
                     <br>
                     <div class="crikey-header">
@@ -51,11 +52,38 @@
                     <br>
                     <p>We understand that privacy is important. That's why your number will not be seen by anyone but you.</p>
                     <br>
-                    <button type="button" class="btn btn-default firstStep">Next</button>
+                    <button type="button" class="btn btn-default helpFirstStep">Next</button>
+                </div>
+
+                <!--Step two of multi step form -->
+                <div class="helpout-step-two" style="display:none;">
+                    <br>
+                    <br>
+                    <div class="crikey-header">
+                        <h1>To Help Out!</h1>
+
+                    </div>
+                    <div class="subheading">
+                        <h2>Give Help</h2>
+                    </div>
+                    <br>
+                    <span><label>Their name:</label><p id="jobName"></p></span><br>
+                    <span><label>Their phone:</label><p id="jobPhone"></p></span><br>
+                    <span><label>Task type:</label><p id="jobType"></p></span><br>
+                    <span><label>Task Description:</label><p id="jobDescription"></p></span>
+
+                    <hr>
+
+                    <span><label>Your name:</label><p id="yourName"></p></span><br>
+                    <span><label>Your phone:</label><p id="yourPhone"></p></span><br>
+                    <br>
+                    <a href="/"><button type="button" onclick="confirmHelp()" class="btn btn-primary firstStep">Confirm</button></a>
                 </div>
               </div>
             </form>
           </div>
+          <script>
+          </script>
           <script src="js/nav.js"></script>
           <script src="js/helpform.js"></script>
           <script src="js/servercon.js"></script>
