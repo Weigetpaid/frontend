@@ -11,6 +11,7 @@ html {
 }
 body {
   margin-bottom: 45px;
+  overflow: hidden;
 }
 
 .crikey-header{
@@ -109,6 +110,18 @@ body {
   color:#333;
 }
 
+
+.burger.right {
+  left:inherit;
+  right:20px;
+  font-size: 3em;
+  top: 10px !important;
+}
+
+.myLabel {
+  color:white;
+}
+
 .add {
   position:fixed !important;
   z-index:2;
@@ -116,6 +129,7 @@ body {
   right: 20px;
   top: 20px !important;
   color:#333;
+
 }
 
 .sidebar {
@@ -129,6 +143,14 @@ body {
   position:fixed;
   z-index: 2;
 
+}
+
+.sidebar.right {
+  right:0px;
+}
+
+.sidebar.right.on {
+  width:50%;
 }
 
 .sidebar ul {
@@ -166,9 +188,7 @@ body {
   padding:10px;
 }
 
-.sidebar li:hover{
-  border-left: 10px solid #222;
-}
+
 
 .sidebar li a:hover {
   color:white;
