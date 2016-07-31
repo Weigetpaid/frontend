@@ -87,9 +87,9 @@
       var map, heatmap, floodData;
       function saveMarkerData(){
           $data = {};
-          $data.title = $("#MarkerTitle").text;
-          $data.description = $("#MarkerDescription").text;
-          $data.phonenumber = $("#phonenumber").text;
+          $data.title = $("#MarkerTitle").html();
+          $data.description = $("#MarkerDescription").html();
+          $data.phonenumber = $("#phonenumber").html();
           $data.active = false;
           sessionStorage.setItem("data", JSON.parse($data));
 
