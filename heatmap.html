@@ -103,7 +103,8 @@
           zoom: 13,
           center: {lat: parseFloat(sessionStorage.getItem('lastLat')), lng: parseFloat(sessionStorage.getItem('lastLong'))},
           mapTypeId: 'roadmap',
-          mapTypeControl: false
+          mapTypeControl: false,
+          streetViewControl: false
         });
         floodData = new google.maps.FusionTablesLayer({
           //map: map,
