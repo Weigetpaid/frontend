@@ -4,16 +4,19 @@ if (sessionStorage.getItem("lastLat") === null
 }
 
 $( document ).ready(function() {
-    $(".burger").click(function() {
-      if ($(".sidebar").hasClass('on')) {
-        $(".sidebar").removeClass("on");
+    $(".burger.left").click(function() {
+      $(".sidebar.right").removeClass("on");
+      $(".burger.right").addClass('blackBurger');
+      $(".burger.right").removeClass('whiteBurger');
+      if ($(".sidebar.left").hasClass('on')) {
+        $(".sidebar.left").removeClass("on");
       } else {
-        $(".sidebar").addClass("on");
+        $(".sidebar.left").addClass("on");
       }
     });
 
-    $(".burger").click(function() {
-      if ($(".sidebar").hasClass('on')) {
+    $(".burger.left").click(function() {
+      if ($(".sidebar.left").hasClass('on')) {
         $("#burgerMenu").addClass('whiteBurger');
         $("#burgerMenu").removeClass("blackBurger");
       } else {
@@ -22,18 +25,23 @@ $( document ).ready(function() {
       }
     });
 
+
+
+
+
     $(".burger").on('click',function(e) {
+
   e.stopPropagation();
 });
 
     $(document).click(function() {
       console.log($(".sidebar").hasClass('on'));
       if($(".sidebar").hasClass('on')) {
-        $('.sidebar').removeClass("on");   
-        $("#burgerMenu").addClass('blackBurger');
-        $("#burgerMenu").removeClass("whiteBurger");   
+
+        $(".burger").addClass('blackBurger');
+        $(".burger").removeClass('whiteBurger');
+        $('.sidebar').removeClass("on");
+
       }
     });
 });
-
-

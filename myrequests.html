@@ -12,6 +12,10 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="https://use.fontawesome.com/1af0c15e61.js"></script>
+
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Gentium+Book+Basic:400,400italic,700' rel='stylesheet' type='text/css'>
     </head>
 
 <body>
@@ -25,20 +29,24 @@
     </nav>
     <span id="burgerMenu" class="glyphicon glyphicon-menu-hamburger burger blackBurger" aria-hidden="true"></span>
     <a href="needhelp.html"><span class="glyphicon glyphicon-plus add" aria-hidden="true"></span></a>
-    
+
 
     <div class="container" id="listRequests">
         <br>
         <br>
-        <h3>My Requests</h3>
-        <div class="list-item">
-            <div class="item-content">
-                <button type="button" class="btn btn-default btn-lg">
-                    <span class="glyphicon glyphicon-road" aria-hidden="true"></span> Transportation
-                </button>
-              
-            </div>
+        <div class="crikey-header">
+            <h1>My Requests</h1>
+            <hr>
         </div>
+        <div class="container">
+          <button type="button" class="btn btn-info btn-default btn-lg" data-toggle="collapse" data-target="#demo"><span class="glyphicon glyphicon-road" aria-hidden="true"></span>Transportation</button>
+          <div id="demo" class="collapse">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          </div>
+        </div>
+
     </div>
     <script src="js/nav.js"></script>
 </body>
