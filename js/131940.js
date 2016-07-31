@@ -23,7 +23,7 @@ function getdata_131940(callback) {
 	    url: "datasets/trafficnew.json",
 	    success: function (data) {
 			console.log(data);
-/* 			callback(JSON.parse(data)); */
+			callback(JSON.parse(data));
 	    }
 	});
 }
