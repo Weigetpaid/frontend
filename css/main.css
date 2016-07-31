@@ -17,6 +17,11 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 40px;
 }
+.subheading{
+  font-family: 'Gentium Book Basic', serif;
+  font-weight: lighter;
+  font-size: 14px;
+}
 
 #map {
   height: 95%;
