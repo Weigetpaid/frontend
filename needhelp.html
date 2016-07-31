@@ -36,6 +36,7 @@
                     <br>
                     <div class="crikey-header">
                         <h1>Need Help?</h1>
+                        <br>
                     </div>
                     <div class="subheading">
                         <h2>Please enter your details</h2>
@@ -55,9 +56,13 @@
 
                 <!--Step two -->
                 <div class="form-step-two" style="display:none">
-
-                    <h2>What do you need help with?</h2>
+                  <div class="crikey-header">
+                    <h1>What do you need help with?</h1>
                     <hr>
+                  </div>
+                  <div class="subheading">
+                      <h2>Choose a category</h2>
+                  </div>
                     <br>
                     <button type="button" value="Accommodation" onclick="checkButtonValue(this.value)" class="btn btn-primary btn-lg btn-block raised secondStep">
                         <span class="glyphicon glyphicon-home bigicon"></span>
@@ -90,8 +95,13 @@
 
                 <!--Step three -->
                 <div class="form-step-three" style="display:none">
-                  <h2 id="selectedButton">*Selected Button*</h2>
-                  <p>Please give some more details about your requirements.</p>
+                  <div class="crikey-header">
+                  <h1 id="selectedButton">*Selected Button*</h1>
+                  <hr>
+                </div>
+                <div class="subheading">
+                    <h2>Give some more details about your requirements</h2>
+                </div>
                   <textarea id="descriptionInput" class="form-control" rows="3" placeholder="E.g. I need help transporting sandbags from town hall to my house"></textarea>
                   <br>
                   <p>How many people will you need?</p>
