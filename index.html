@@ -37,13 +37,15 @@
   </button>
   <h2> or </h2>
 
-<form class="form-signin addressEnter">
+
       <input class="form-control" id="geocomplete" type="text" placeholder="Type in an address" size="90" />
-      <input id="indexButton" class="btn btn-lg btn-primary btn-inline" id="find" type="submit" value="Save" />
-    </form>
+      <button class="btn btn-lg btn-primary btn-inline" id="find" >Save</button>
+
 </div>
     <script src="js/location.js"></script>
-    <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKKrj7vW-dxHA_g4VmpDUqSbCp_d0OQvk&libraries=places">
+    </script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
     <script src="js/jquery.geocomplete.min.js"></script>
@@ -55,7 +57,7 @@
     let long = sessionStorage.getItem('lastLong');
     let lat = sessionStorage.getItem('lastLat');
 
-    if (lat != null && long != null) {
+  if (lat != null && long != null) {
       window.location.replace("./heatmap.html");
     }
       $(function(){
