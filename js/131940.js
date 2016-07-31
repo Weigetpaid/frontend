@@ -10,8 +10,6 @@ function getdata_131940(callback) {
 	    contentType: 'application/json; charset=utf-8',
 	    success: function(resultData) {
 	    	callback(resultData);
-	          console.log(resultData['features']);
-	          return resultData['features'];
 	    },
 	    error : function(jqXHR, textStatus, errorThrown) {
 	    	console.log(errorThrown);
