@@ -98,12 +98,14 @@
       $("*").click(function(){
         console.log(this);
       });
+      
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           zoom: 13,
           center: {lat: parseFloat(sessionStorage.getItem('lastLat')), lng: parseFloat(sessionStorage.getItem('lastLong'))},
           mapTypeId: 'roadmap',
-          mapTypeControl: false
+          mapTypeControl: false,
+          streetViewControl: false
         });
         floodData = new google.maps.FusionTablesLayer({
           //map: map,
@@ -262,7 +264,6 @@
 		});
 
 		getdata_131940(function(locations) {
-			console.log("Traffic data");
 			console.log(locations['features']);
 			for (var i = 0; i < locations['features'].length; i++) {
 				var location = {lat: locations['features'][i]['geometry']['geometries'][0]['coordinates'][1], lng: locations['features'][i]['geometry']['geometries'][0]['coordinates'][0]};
