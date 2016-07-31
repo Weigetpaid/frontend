@@ -220,7 +220,9 @@
         state:"In Progress",
         description: feature.descr,
         numParticipants: feature.numpeople,
-        time: feature.timeestimate
+        time: feature.timeestimate,
+        name: feature.name,
+        phone: feature.phone
       });
 
       google.maps.event.addListener(marker, 'click', function() {
@@ -232,9 +234,9 @@
         $("#MarkerDescription").text(this.description);
         $("#MarkerParticipants").text(this.numParticipants);
         $("#MarkerTime").text(this.time);
-        $("#phonenumber").val(this.phone);
+        $("#phonenumber").text(this.phone);
         console.log(this.name);
-        $("#name").val(this.name);
+        $("#name").text(this.name);
         });
       }
 
