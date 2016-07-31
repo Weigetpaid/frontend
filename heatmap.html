@@ -196,19 +196,20 @@
 
 	  function drawBlips() {
 
-		var icons = {pepe: {icon: 'pepe.png'}, datboi: {icon: 'boi.png'}};
+		var icons = {"": {icon: 'pepe.png'}, "accomodation": {icon: 'boi.png'}};
 
-	getResults(function(feature){
-    for (var i = 0, feature; feature = features[i];i++){
+	getRequests(function(features){
+    for (var i = 0, features; feature = features[i];i++){
+      console.log(feature);
       var marker = new google.maps.Marker({
       position: feature.position,
-      icon: icons[feature.type].icon,
+      icon: icons[feature.category].icon,
         map: map,
-        type: feature.type,
-        state:"in progress",
-        description: "Forever alone",
-        numParticipants: "3",
-        time: "30mins"
+        type: feature.category,
+        state:"In Progress",
+        description: feature.descr,
+        numParticipants: feature.numpeople,
+        time: feature.timeestimate
       });
 
       google.maps.event.addListener(marker, 'click', function() {

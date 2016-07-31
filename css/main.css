@@ -104,6 +104,15 @@ body {
   color:#333;
 }
 
+.add {
+  position:fixed !important;
+  z-index:2;
+  font-size: 2.5em;
+  right: 20px;
+  top: 20px !important;
+  color:#333;
+}
+
 .sidebar {
   text-align: left;
   font-size: 0.75em;
